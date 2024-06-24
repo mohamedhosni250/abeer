@@ -16,11 +16,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            UniversitySeeder::class,
+            // UniversitySeeder::class,
             DegreesTableSeeder::class,
             DepartmentsTableSeeder::class,
-            ProgramsTableSeeder::class
-
 
         ]);
         // \App\Models\User::factory(10)->create();

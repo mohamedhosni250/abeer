@@ -13,14 +13,15 @@ class DegreesTableSeeder extends Seeder
      */
     public function run()
     {
-        $degrees = [
-            ['name' => 'Bachelor'],
-            ['name' => 'Doctorate'],
-            ['name' => 'Foundation Year'],
-            ['name' => 'Language Course'],
-            ['name' => 'Master'],
-        ];
-
-        DB::table('degrees')->insert($degrees);
+        DB::table('degrees')->insert([
+            ['id' => 1, 'name' => 'Certificate'],
+            ['id' => 2, 'name' => 'Foundation'],
+            ['id' => 3, 'name' => 'English courses'],
+            ['id' => 4, 'name' => 'International Schools'],
+            ['id' => 5, 'name' => 'Bachelor'],
+            ['id' => 6, 'name' => 'Diploma'],
+            ['id' => 7, 'name' => 'Masters'],
+            ['id' => 8, 'name' => 'Phd'],
+        ]);
     }
 }

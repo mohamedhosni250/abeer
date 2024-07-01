@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home 1 | Edurock - Education LMS Template')
+@section('title', 'Dashboard 1 | Edurock - Education LMS Template')
 
 @section('content')
     <main class="main_wrapper overflow-hidden">
@@ -67,11 +67,11 @@
 
                         <nav>
                             <ul class="mobile-menu">
-                                <li class="menu-item-has-children"><a href="index.html">Home</a>
+                                <li class="menu-item-has-children"><a href="index.html">Dashboard</a>
                                     <ul class="dropdown">
-                                        <li class="menu-item-has-children"><a href="index.html">Homes Light</a>
+                                        <li class="menu-item-has-children"><a href="index.html">Dashboards Light</a>
                                             <ul class="dropdown">
-                                                <li><a href="index.html">Home (Default)</a></li>
+                                                <li><a href="index.html">Dashboard (Default)</a></li>
                                                 <li><a href="home-2.html">Elegant</a></li>
                                                 <li><a href="home-3.html">Classic</a></li>
                                                 <li><a href="home-4.html">Classic LMS</a></li>
@@ -86,9 +86,9 @@
                                         </li>
 
                                         <li class="menu-item-has-children">
-                                            <a href="index.html">Homes Dark</a>
+                                            <a href="index.html">Dashboards Dark</a>
                                             <ul class="dropdown">
-                                                <li><a href="index-dark.html">Home Default (Dark)</a></li>
+                                                <li><a href="index-dark.html">Dashboard Default (Dark)</a></li>
                                                 <li><a href="home-2-dark.html">Elegant (Dark)</a></li>
                                                 <li><a href="home-3-dark.html">Classic (Dark)</a></li>
                                                 <li><a href="home-4-dark.html">Classic LMS (Dark)</a></li>
@@ -318,16 +318,16 @@
                     </div>
 
                     <!-- <div class="single-mobile-curr-lang">
-                                                                        <a class="mobile-currency-active" href="#">Currency <i class="icofont-thin-down"></i></a>
-                                                                        <div class="lang-curr-dropdown curr-dropdown-active">
-                                                                            <ul>
-                                                                                <li><a href="#">USD</a></li>
-                                                                                <li><a href="#">EUR</a></li>
-                                                                                <li><a href="#">Real</a></li>
-                                                                                <li><a href="#">BDT</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div> -->
+                                                                                                <a class="mobile-currency-active" href="#">Currency <i class="icofont-thin-down"></i></a>
+                                                                                                <div class="lang-curr-dropdown curr-dropdown-active">
+                                                                                                    <ul>
+                                                                                                        <li><a href="#">USD</a></li>
+                                                                                                        <li><a href="#">EUR</a></li>
+                                                                                                        <li><a href="#">Real</a></li>
+                                                                                                        <li><a href="#">BDT</a></li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div> -->
 
                     <div class="single-mobile-curr-lang">
                         <a class="mobile-account-active" href="#">My Account <i class="icofont-thin-down"></i></a>
@@ -387,35 +387,35 @@
 
 
                                         <!-- <div class="herobannerarea__text herobannerarea__text__2">
-                                                                                <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
-                                                                            </div> -->
+                                                                                                        <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
+                                                                                                    </div> -->
 
-                                            <form action="{{ route('search') }}" method="GET"
-                                                class="d-flex justify-content-center mt-4">
-                                                <div class="form-group mx-2">
-                                                    <select name="degree" class="form-control">
-                                                        <option value="" disabled selected>Select Degree</option>
-                                                        @foreach ($degrees as $degree)
-                                                            <option value="{{ $degree->id }}">{{ $degree->name }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="form-group mx-2">
-                                                    <select name="department" class="form-control">
-                                                        <option value="" disabled selected>Select Faculty
+                                        <form action="{{ route('search') }}" method="GET"
+                                            class="d-flex justify-content-center mt-4">
+                                            <div class="form-group mx-2">
+                                                <select name="degree" class="form-control">
+                                                    <option value="" disabled selected>Select Degree</option>
+                                                    @foreach ($degrees as $degree)
+                                                        <option value="{{ $degree->id }}">{{ $degree->name }}
                                                         </option>
-                                                        @foreach ($departments as $department)
-                                                            <option value="{{ $department->id }}">
-                                                                {{ $department->name }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">Search</button>
-                                            </form>
-                                            {{-- hosni form  --}}
-                                            
-                                   
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="form-group mx-2">
+                                                <select name="department" class="form-control">
+                                                    <option value="" disabled selected>Select Faculty
+                                                    </option>
+                                                    @foreach ($departments as $department)
+                                                        <option value="{{ $department->id }}">
+                                                            {{ $department->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Search</button>
+                                        </form>
+                                        {{-- hosni form  --}}
+
+
                                         <div class="footerarea__icon footerarea__icon__2">
                                             <p>Followed by :</p>
                                             <ul>
@@ -459,8 +459,8 @@
 
 
                                         <!-- <div class="herobannerarea__text herobannerarea__text__2">
-                                                                                <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
-                                                                            </div> -->
+                                                                                                        <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
+                                                                                                    </div> -->
                                         <div class="hreobannerarea__button__2">
                                             <a class="default__button" href="#">More about university</a>
                                         </div>
@@ -507,8 +507,8 @@
 
 
                                         <!-- <div class="herobannerarea__text herobannerarea__text__2">
-                                                                                <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
-                                                                            </div> -->
+                                                                                                        <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
+                                                                                                    </div> -->
                                         <div class="hreobannerarea__button__2">
                                             <a class="default__button" href="#">More about university</a>
                                         </div>
@@ -583,7 +583,94 @@
 
         </div>
         <!-- herobannerarea__section__end-->
+        {{-- features section hosni  --}}
+        <div class="container my-5 featured-universities">
+            <h2 class="text-center">Our <span class="text-primary">Featured</span> Universities</h2>
+            <p class="text-center">Find your perfect fit studying abroad at Malaysian universities with our assistance.</p>
 
+            <div id="featuredUniversitiesCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <!-- First Card -->
+                            <div class="col-md-4">
+                                <div class="card position-relative">
+                                    <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
+                                        class="card-img-top" alt="...">
+                                    <div class="logo-circle">
+                                        <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
+                                            alt="UNITAR Logo">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">UNITAR International University</h5>
+                                        <p class="card-text">
+                                            <span><i class="bi bi-star-fill"></i> 5-STAR QS</span><br>
+                                            <span><i class="bi bi-mortarboard-fill"></i> +20</span><br>
+                                            <span><i class="bi bi-people-fill"></i> +10k</span><br>
+                                            From <span class="text-primary">$2900</span> Per Year
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Second Card -->
+                            <div class="col-md-4">
+                                <div class="card position-relative">
+                                    <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
+                                        class="card-img-top" alt="...">
+                                    <div class="logo-circle">
+                                        <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
+                                            alt="Lincoln Logo">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Lincoln University College</h5>
+                                        <p class="card-text">
+                                            <span><i class="bi bi-hash"></i> #199 QS Asia</span><br>
+                                            <span><i class="bi bi-mortarboard-fill"></i> +20</span><br>
+                                            <span><i class="bi bi-people-fill"></i> 150+</span><br>
+                                            From <span class="text-primary">$3300</span> Per Year
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Third Card -->
+                            <div class="col-md-4">
+                                <div class="card position-relative">
+                                    <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
+                                        class="card-img-top" alt="...">
+                                    <div class="logo-circle">
+                                        <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
+                                            alt="TAYLOR'S Logo">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">TAYLOR'S University</h5>
+                                        <p class="card-text">
+                                            <span><i class="bi bi-award-fill"></i> Ranked</span><br>
+                                            <span><i class="bi bi-mortarboard-fill"></i> 79</span><br>
+                                            <span><i class="bi bi-people-fill"></i> 6</span><br>
+                                            From <span class="text-primary">$4000</span> Per Year
+                                        </p>
+                                        <a href="#" class="btn btn-primary">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat carousel-item for more slides -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#featuredUniversitiesCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#featuredUniversitiesCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
         <!-- brand__section__start -->
         <div style="margin-top: 100px ;" class="brandarea__2">
             <div class="container">

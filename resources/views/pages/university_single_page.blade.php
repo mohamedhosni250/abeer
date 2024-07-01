@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12">
                         <div class="blogarae__img__2 course__details__img__2" data-aos="fade-up">
-                            <img loading="lazy" src="{{ asset('img/blog/blog_8.png') }}" alt="blog">
+                            <img loading="lazy" src="{{ asset($university->featured_image_url) }}" alt="blog">
                         </div>
 
                         <div class="blog__details__content__wraper">
@@ -35,7 +35,7 @@
                                 <ul>
                                     <li>
                                         <div class="course__price">
-                                            {{ $university->location }}
+                                            {{ $university->location->name }}
                                         </div>
                                     </li>
                                     <li>
@@ -65,33 +65,29 @@
                                 </p>
                             </div>
                             <div class="accordion content__cirriculum__wrap" id="accordionExample">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Intro Course content <span>02hr 35min</span>
-                                        </button>
-                                    </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse show"
-                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <div class="scc__wrap">
-                                                <div class="scc__info">
-                                                    <i class="icofont-video-alt"></i>
-                                                    <h5> <span>Video :</span> Lorem ipsum dolor sit amet.</h5>
-                                                </div>
-                                                <div class="scc__meta">
-                                                    <span class="time"> <i class="icofont-clock-time"></i> 22
-                                                        minutes</span>
-                                                    <a href="lesson.html"><span class="question"><i class="icofont-eye"></i>
-                                                            Preview</span></a>
-                                                </div>
+                                @foreach ($university->details as $index => $detail)
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="heading{{ $index }}">
+                                            <button
+                                                class="accordion-button @if ($index > 0) collapsed @endif"
+                                                type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapse{{ $index }}"
+                                                aria-expanded="@if ($index === 0) true @else false @endif"
+                                                aria-controls="collapse{{ $index }}">
+                                                {{ $detail->tab_name }}
+                                            </button>
+                                        </h2>
+                                        <div id="collapse{{ $index }}"
+                                            class="accordion-collapse collapse @if ($index === 0) show @endif"
+                                            aria-labelledby="heading{{ $index }}" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                {!! $detail->content !!}
                                             </div>
-
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
+
                             {{-- hosni new section --}}
                             <div class="coursearea sp_top_100 sp_bottom_100">
                                 <div class="container">
@@ -131,7 +127,6 @@
                                 </div>
                             </div>
                             <!-- Include Livewire component here -->
-
                         </div>
     </main>
 

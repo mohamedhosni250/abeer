@@ -4,15 +4,32 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class University extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name', 'location', 'description', 'featured_image', 'logo'
+        'name',
+        'location_id',
+        'logo',
+        'featured_image',
+        'starting_fee',
+        'ranking',
+        'students_count',
+        'programs_count',
+        'description',
     ];
+    public function getLogoUrlAttribute()
+    {
+        return Storage::url($this->attributes['logo']);
+    }
 
+    public function getFeaturedImageUrlAttribute()
+    {
+        return Storage::url($this->attributes['featured_image']);
+    }
     public function programs()
     {
         return $this->hasMany(Program::class);
@@ -20,5 +37,13 @@ class University extends Model
     public function departments()
     {
         return $this->hasMany(Department::class);
+    }
+    public function details()
+    {
+        return $this->hasMany(UniversityDetail::class);
+    }
+    public function location()
+    {
+        return $this->belongsTo(Location::class);
     }
 }

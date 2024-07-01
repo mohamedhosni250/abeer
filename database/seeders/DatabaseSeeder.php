@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             // UniversitySeeder::class,
             DegreesTableSeeder::class,
             DepartmentsTableSeeder::class,
-
+            LocationSeeder::class
         ]);
         // \App\Models\User::factory(10)->create();
 

@@ -6,7 +6,7 @@
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="gridarea__wraper gridarea__wraper__2">
                         <div class="gridarea__img">
-                            <a href=""><img loading="lazy" src="{{ $university->featured_image }}"
+                            <a href=""><img loading="lazy" src="{{ asset($university->featured_image) }}"
                                     alt="university"></a>
                             <div class="gridarea__small__button">
                                 <div class="grid__badge">{{ $university->name }}</div>

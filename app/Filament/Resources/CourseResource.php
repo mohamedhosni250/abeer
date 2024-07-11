@@ -37,7 +37,9 @@ class CourseResource extends Resource
                 FileUpload::make('image')
                     ->directory('uploads/courses')
                     ->image(),
-
+                Forms\Components\Select::make('course_category_id')
+                    ->relationship('courseCategory', 'name')
+                    ->required(),
                 Repeater::make('videos')
                     ->relationship('videos')
                     ->schema([
@@ -60,6 +62,8 @@ class CourseResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('title')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('courseCategory.name')->label('Category')->sortable(),
+
                 TextColumn::make('description')->limit(50),
 
             ])

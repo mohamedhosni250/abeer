@@ -13,9 +13,21 @@
         <div class="blogarea__2 sp_top_100 sp_bottom_100">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-12 col-lg-12">
-                        <div class="blogarae__img__2 course__details__img__2" data-aos="fade-up">
-                            <img loading="lazy" src="{{ asset($university->featured_image_url) }}" alt="blog">
+
+                    <div class="col-xl-8 col-lg-8">
+                        <div class="container mt-5">
+                            <div class="card mx-auto" style="">
+                                <img src="{{ asset($university->featured_image_url) }} "class="card-img-top"
+                                    alt="University Image">
+                                <div class="logo-container">
+                                    <img src="{{ asset($university->logo_url) }}" alt="University Logo" class="img-fluid">
+                                </div>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title fw-bold">ASIA PACIFIC UNIVERSITY (APU)</h5>
+                                    <p class="card-text location-text text-muted"><i class="bi bi-geo-alt"></i> Kuala
+                                        Lumpur, Malaysia</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="blog__details__content__wraper">
@@ -128,6 +140,51 @@
                             </div>
                             <!-- Include Livewire component here -->
                         </div>
+
+                    </div>
+                    {{-- custom hosni  --}}
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+
+
+
+                        <div class="container mt-5">
+                            <div class="info-card">
+                                <div class="icon-container">
+                                    <div>
+                                        <i class="bi bi-star-fill" style="font-size: 2rem; color: #007bff;"></i>
+                                        <h5 class="fw-bold">Top</h5>
+                                        <p class="text-muted">Ranking</p>
+                                    </div>
+                                    <div>
+                                        <i class="bi bi-mortarboard-fill" style="font-size: 2rem; color: #007bff;"></i>
+                                        <h5 class="fw-bold">+10k</h5>
+                                        <p class="text-muted">Students</p>
+                                    </div>
+                                    <div>
+                                        <i class="bi bi-book-fill" style="font-size: 2rem; color: #007bff;"></i>
+                                        <h5 class="fw-bold">87</h5>
+                                        <p class="text-muted">Programs</p>
+                                    </div>
+                                </div>
+                                <div class="divider">
+                                    <i class="bi bi-info-circle-fill" style="font-size: 1.2rem; color: #007bff;"></i>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="bi bi-dot"></i> Globally top 2.2%, 5 Stars Plus in QS
+                                        2024.</li>
+                                    <li class="mb-2"><i class="bi bi-dot"></i> Thriving international community: 13,000+
+                                        students from 130+ countries.</li>
+                                    <li class="mb-2"><i class="bi bi-dot"></i> 100% employability rate upon graduation
+                                        (Ministry-certified).</li>
+                                </ul>
+                                <h6 class="fw-bold">Starting From <span style="color: #007bff;">7100$</span></h6>
+                                <a href="#" class="btn btn-primary w-100 mt-3">APPLY NOW</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
     </main>
 
 @endsection

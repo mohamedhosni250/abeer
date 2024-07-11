@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('course_category_id')->constrained();
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('image')->nullable();

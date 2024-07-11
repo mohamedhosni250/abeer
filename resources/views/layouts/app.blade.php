@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     @livewireStyles
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -60,6 +63,8 @@
     <script src="{{ asset('js/plugins.js') }}"></script>
     <script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
     @livewireScripts
 
     <script>
@@ -71,36 +76,37 @@
         if (localStorage.getItem("theme-color") === "light") {
             document.getElementById("light--to-dark-button")?.classList.remove("dark--mode");
         }
+        const mySwiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            slidesPerColumn: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            on: {
+                init: function() {},
+                orientationchange: function() {},
+                beforeResize: function() {
+                    let vw = window.innerWidth;
+                    if (vw > 1000) {
+                        mySwiper.params.slidesPerView = 3
+                        mySwiper.params.slidesPerColumn = 3
+                        mySwiper.params.slidesPerGroup = 3;
+                    } else {
+                        mySwiper.params.slidesPerView = 4
+                        mySwiper.params.slidesPerColumn = 2
+                        mySwiper.params.slidesPerGroup = 4;
+                    }
+                    mySwiper.init();
+                },
+            },
+        });
     </script>
+
     <style>
-        <style>.container {
-            max-width: 1200px;
-        }
 
-        .card {
-            border: none;
-            border-radius: 10px;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .btn-outline-primary {
-            border-color: #007bff;
-            color: #007bff;
-        }
-
-        .btn-outline-primary:hover {
-            background-color: #007bff;
-            color: white;
-        }
-    </style>
     </style>
     @stack('scripts')
 </body>

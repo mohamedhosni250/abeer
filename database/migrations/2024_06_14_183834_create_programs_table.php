@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('image_url')->nullable();
             $table->longText('description')->nullable();
-            $table->integer('duration')->nullable(); // Duration in years
+            $table->string('duration')->nullable(); // Duration in years
             $table->string('study_mode')->nullable(); // Study mode (e.g., On Campus)
             $table->string('intake')->nullable(); // Intake period (e.g., Ongoing)
-            $table->decimal('fee_per_year', 10, 2)->nullable(); // Fee per year
-            $table->decimal('scholarship_percentage', 5, 2)->nullable(); // Scholarship percentage
-            $table->decimal('scholarship_fee_per_year', 10, 2)->nullable(); // Fee after scholarship per year           
+            $table->string('fee_per_year')->nullable(); // Fee per year
+            $table->string('scholarship_percentage')->nullable(); // Scholarship percentage
+            $table->string('scholarship_fee_per_year')->nullable(); // Fee after scholarship per year           
             $table->foreignId('university_id')->constrained();
             $table->foreignId('degree_id')->constrained();
             $table->foreignId('department_id')->constrained();

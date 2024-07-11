@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class University extends Model
 {
@@ -21,6 +22,14 @@ class University extends Model
         'programs_count',
         'description',
     ];
+    protected static function booted()
+    {
+        static::saving(function ($product) {
+            if (empty($product->slug)) {
+                $product->slug = Str::slug($product->name);
+            }
+        });
+    }
     public function getLogoUrlAttribute()
     {
         return Storage::url($this->attributes['logo']);

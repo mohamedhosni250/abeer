@@ -318,16 +318,16 @@
                     </div>
 
                     <!-- <div class="single-mobile-curr-lang">
-                                                                                                <a class="mobile-currency-active" href="#">Currency <i class="icofont-thin-down"></i></a>
-                                                                                                <div class="lang-curr-dropdown curr-dropdown-active">
-                                                                                                    <ul>
-                                                                                                        <li><a href="#">USD</a></li>
-                                                                                                        <li><a href="#">EUR</a></li>
-                                                                                                        <li><a href="#">Real</a></li>
-                                                                                                        <li><a href="#">BDT</a></li>
-                                                                                                    </ul>
-                                                                                                </div>
-                                                                                            </div> -->
+                                                                                                                                            <a class="mobile-currency-active" href="#">Currency <i class="icofont-thin-down"></i></a>
+                                                                                                                                            <div class="lang-curr-dropdown curr-dropdown-active">
+                                                                                                                                                <ul>
+                                                                                                                                                    <li><a href="#">USD</a></li>
+                                                                                                                                                    <li><a href="#">EUR</a></li>
+                                                                                                                                                    <li><a href="#">Real</a></li>
+                                                                                                                                                    <li><a href="#">BDT</a></li>
+                                                                                                                                                </ul>
+                                                                                                                                            </div>
+                                                                                                                                        </div> -->
 
                     <div class="single-mobile-curr-lang">
                         <a class="mobile-account-active" href="#">My Account <i class="icofont-thin-down"></i></a>
@@ -387,8 +387,8 @@
 
 
                                         <!-- <div class="herobannerarea__text herobannerarea__text__2">
-                                                                                                        <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
-                                                                                                    </div> -->
+                                                                                                                                                    <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
+                                                                                                                                                </div> -->
 
                                         <form action="{{ route('search') }}" method="GET"
                                             class="d-flex justify-content-center mt-4">
@@ -459,8 +459,8 @@
 
 
                                         <!-- <div class="herobannerarea__text herobannerarea__text__2">
-                                                                                                        <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
-                                                                                                    </div> -->
+                                                                                                                                                    <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
+                                                                                                                                                </div> -->
                                         <div class="hreobannerarea__button__2">
                                             <a class="default__button" href="#">More about university</a>
                                         </div>
@@ -507,8 +507,8 @@
 
 
                                         <!-- <div class="herobannerarea__text herobannerarea__text__2">
-                                                                                                        <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
-                                                                                                    </div> -->
+                                                                                                                                                    <p>Lorem Ipsum is simply dummy text of the printing typesetting.</p>
+                                                                                                                                                </div> -->
                                         <div class="hreobannerarea__button__2">
                                             <a class="default__button" href="#">More about university</a>
                                         </div>
@@ -584,93 +584,34 @@
         </div>
         <!-- herobannerarea__section__end-->
         {{-- features section hosni  --}}
-        <div class="container my-5 featured-universities">
-            <h2 class="text-center">Our <span class="text-primary">Featured</span> Universities</h2>
-            <p class="text-center">Find your perfect fit studying abroad at Malaysian universities with our assistance.</p>
-
-            <div id="featuredUniversitiesCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row">
-                            <!-- First Card -->
-                            <div class="col-md-4">
-                                <div class="card position-relative">
-                                    <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
-                                        class="card-img-top" alt="...">
-                                    <div class="logo-circle">
-                                        <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
-                                            alt="UNITAR Logo">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">UNITAR International University</h5>
-                                        <p class="card-text">
-                                            <span><i class="bi bi-star-fill"></i> 5-STAR QS</span><br>
-                                            <span><i class="bi bi-mortarboard-fill"></i> +20</span><br>
-                                            <span><i class="bi bi-people-fill"></i> +10k</span><br>
-                                            From <span class="text-primary">$2900</span> Per Year
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Second Card -->
-                            <div class="col-md-4">
-                                <div class="card position-relative">
-                                    <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
-                                        class="card-img-top" alt="...">
-                                    <div class="logo-circle">
-                                        <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
-                                            alt="Lincoln Logo">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Lincoln University College</h5>
-                                        <p class="card-text">
-                                            <span><i class="bi bi-hash"></i> #199 QS Asia</span><br>
-                                            <span><i class="bi bi-mortarboard-fill"></i> +20</span><br>
-                                            <span><i class="bi bi-people-fill"></i> 150+</span><br>
-                                            From <span class="text-primary">$3300</span> Per Year
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Third Card -->
-                            <div class="col-md-4">
-                                <div class="card position-relative">
-                                    <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
-                                        class="card-img-top" alt="...">
-                                    <div class="logo-circle">
-                                        <img src="https://myunis.com.my/wp-content/uploads/2023/08/SEGI-1280-720.png"
-                                            alt="TAYLOR'S Logo">
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">TAYLOR'S University</h5>
-                                        <p class="card-text">
-                                            <span><i class="bi bi-award-fill"></i> Ranked</span><br>
-                                            <span><i class="bi bi-mortarboard-fill"></i> 79</span><br>
-                                            <span><i class="bi bi-people-fill"></i> 6</span><br>
-                                            From <span class="text-primary">$4000</span> Per Year
-                                        </p>
-                                        <a href="#" class="btn btn-primary">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Repeat carousel-item for more slides -->
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#featuredUniversitiesCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#featuredUniversitiesCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+        <div class="swiper-container">
+            <div class="swiper-wrapper grid-container">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div>
+              <div class="swiper-slide">Slide 10</div>
+              <div class="swiper-slide">Slide 11</div>
+              <div class="swiper-slide">Slide 12</div>
+              <div class="swiper-slide">Slide 13</div>
+              <div class="swiper-slide">Slide 14</div>
+              <div class="swiper-slide">Slide 15</div>
+              <div class="swiper-slide">Slide 16</div>
+              <div class="swiper-slide">Slide 17</div>
+              <div class="swiper-slide">Slide 18</div>
+              <div class="swiper-slide">Slide 19</div>
+              <div class="swiper-slide">Slide 20</div>
+              <div class="swiper-slide">Slide 20</div>
             </div>
-        </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+          
         <!-- brand__section__start -->
         <div style="margin-top: 100px ;" class="brandarea__2">
             <div class="container">

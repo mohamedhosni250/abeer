@@ -14,13 +14,15 @@ return new class extends Migration
         Schema::create('universities', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-
+            $table->string('slug')->unique();
+            $table->boolean('is_visible')->default(true);
+            $table->boolean('is_featured')->default(false);
             $table->string('logo')->nullable();
             $table->string('featured_image')->nullable();
-            $table->decimal('starting_fee', 10, 2)->nullable();
+            $table->string('starting_fee')->nullable();
             $table->string('ranking')->nullable();
-            $table->integer('students_count')->nullable();
-            $table->integer('programs_count')->nullable();
+            $table->string('students_count')->nullable();
+            $table->string('programs_count')->nullable();
             $table->longText('description')->nullable();
             $table->foreignId('location_id')->constrained();
             $table->timestamps();

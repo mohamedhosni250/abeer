@@ -6,10 +6,13 @@ use App\Filament\Resources\UniversityResource\Pages;
 use App\Models\Location;
 use App\Models\University;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -17,7 +20,9 @@ use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 
 
 class UniversityResource extends Resource
@@ -30,19 +35,27 @@ class UniversityResource extends Resource
     {
         return $form
             ->schema([
+
                 TextInput::make('name')
                     ->required()
-                    ->label('University Name'),
+                    ->label('University Name')->reactive()->afterStateUpdated(function ($state, callable $set) {
+                        $set('slug', Str::slug($state));
+                    }),
+                TextInput::make('slug')->disabled(),
+                FileUpload::make('logo')
+                    ->label('logo')->directory('universities_logos'),
+                FileUpload::make('featured_image')
+                    ->label('Featured Image')
+                    ->directory('featured_images'),
+                Section::make('description ')->schema([
+                    MarkdownEditor::make('description')
+                        ->label('Description'),
+                ]),
                 Select::make('location_id')
                     ->label('Location')
                     ->options(Location::all()->pluck('name', 'id'))
                     ->searchable()
                     ->required(),
-                FileUpload::make('logo')
-                    ->label('logo')->directory('universities_logos'),
-                FileUpload::make('featured_image')
-                    ->label('Featured Image')
-                    ->directory('uploads/featured_images'),
                 TextInput::make('starting_fee')
                     ->label('Starting Fee'),
                 TextInput::make('ranking')
@@ -51,8 +64,7 @@ class UniversityResource extends Resource
                     ->label('Students Count'),
                 TextInput::make('programs_count')
                     ->label('Programs Count'),
-                Textarea::make('description')
-                    ->label('Description'),
+
                 Repeater::make('details')
                     ->relationship('details')
                     ->schema([
@@ -69,13 +81,14 @@ class UniversityResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')->label('University Name'),
-                TextColumn::make('location.name')->label('Location'),
                 ImageColumn::make('logo')->label('Logo'),
-                ImageColumn::make('featured_image')->label('Featured Image'),
-                TextColumn::make('starting_fee')->label('Starting Fee'),
+                TextColumn::make('location.name')->label('Location'),
+
                 TextColumn::make('ranking')->label('Ranking'),
                 TextColumn::make('students_count')->label('Students Count'),
                 TextColumn::make('programs_count')->label('Programs Count'),
+                ToggleColumn::make('is_visible'),
+                ToggleColumn::make('is_featured')
             ])
             ->filters([
                 // Add any table filters here if needed

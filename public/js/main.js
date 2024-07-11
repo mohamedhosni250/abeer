@@ -6,7 +6,7 @@
     var windowOn = $(window);
     ////////////////////////////////////////////////////
     //preloader
-    $(window).on( 'load', function() {
+    $(window).on('load', function() {
         $("#back__preloader").delay(1000).fadeOut(400);
     })
 
@@ -396,28 +396,28 @@
         });
 
 
-            /*----------------------------
+        /*----------------------------
     	Cart Plus Minus Button
     ------------------------------ */
-	var CartPlusMinus = $('.cart-plus-minus');
-	
-    CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
-    CartPlusMinus.append('<div class="inc qtybutton">+</div>');
-    $('.qtybutton').on('click', function() {
-        var $button = $(this);
-        var oldValue = $button.parent().find('input').val();
-        if ($button.text() === "+") {
-            var newVal = parseFloat(oldValue) + 1;
-        } else {
-            // Don't allow decrementing below zero
-            if (oldValue > 0) {
-                var newVal = parseFloat(oldValue) - 1;
+        var CartPlusMinus = $('.cart-plus-minus');
+
+        CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
+        CartPlusMinus.append('<div class="inc qtybutton">+</div>');
+        $('.qtybutton').on('click', function() {
+            var $button = $(this);
+            var oldValue = $button.parent().find('input').val();
+            if ($button.text() === "+") {
+                var newVal = parseFloat(oldValue) + 1;
             } else {
-                newVal = 1;
+                // Don't allow decrementing below zero
+                if (oldValue > 0) {
+                    var newVal = parseFloat(oldValue) - 1;
+                } else {
+                    newVal = 1;
+                }
             }
-        }
-        $button.parent().find('input').val(newVal);
-    });
+            $button.parent().find('input').val(newVal);
+        });
 
 
 
@@ -447,18 +447,18 @@ var swiper = new Swiper(".featured__course", {
     slidesPerView: 1,
     breakpoints: {
         575: {
-          slidesPerView: 2,
+            slidesPerView: 2,
         },
 
         768: {
-          slidesPerView: 2,
+            slidesPerView: 2,
         },
 
         992: {
-          slidesPerView: 3,
+            slidesPerView: 3,
         },
         1200: {
-          slidesPerView: 3
+            slidesPerView: 3
         },
         1500: {
             slidesPerView: 4
@@ -469,8 +469,8 @@ var swiper = new Swiper(".featured__course", {
 
 var swiper = new Swiper(".ecommerce__slider", {
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+        el: ".swiper-pagination",
+        clickable: true,
     },
     grabCursor: true,
     navigation: {
@@ -478,7 +478,7 @@ var swiper = new Swiper(".ecommerce__slider", {
         prevEl: ".swiper-button-prev",
     },
     slidesPerView: 1,
-  });
+});
 
 
 
@@ -491,240 +491,217 @@ var swiper = new Swiper(".university__slider__thumb", {
 var swiper2 = new Swiper(".university__slider", {
     spaceBetween: 10,
     navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
     thumbs: {
-    swiper: swiper,
+        swiper: swiper,
     },
 });
 
 var swiper = new Swiper(".ai__slider", {
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+        el: ".swiper-pagination",
+        clickable: true,
     },
     grabCursor: true,
     slidesPerView: 1,
-  });
-
-// Dark to light mode js
-const lightToDarkButton = document.getElementById("light--to-dark-button");
-lightToDarkButton?.addEventListener("click", function () {
-    if (localStorage.getItem("theme-color")) {
-      if (localStorage.getItem("theme-color") === "light") {
-        document.documentElement.classList.add("is_dark");
-        localStorage.setItem("theme-color", "dark");
-        lightToDarkButton?.classList.add("dark--mode");
-      } else {
-        document.documentElement.classList.remove("is_dark");
-        localStorage.setItem("theme-color", "light");
-        lightToDarkButton?.classList?.remove("dark--mode");
-      }
-    } else {
-      if (document.documentElement.classList.contains("is_dark")) {
-        document.documentElement.classList.remove("is_dark");
-        lightToDarkButton?.classList?.remove("dark--mode");
-        localStorage.setItem("theme-color", "light");
-      } else {
-        document.documentElement.classList.add("is_dark");
-        localStorage.setItem("theme-color", "dark");
-        lightToDarkButton?.classList.add("dark--mode");
-      }
-    }
 });
 
+// Dark to light mode js
 
 
-  //Modal Gallery
-  var swiper = new Swiper(".details__gallery", {
+
+
+//Modal Gallery
+var swiper = new Swiper(".details__gallery", {
     spaceBetween: 10,
     slidesPerView: 5,
     freeMode: true,
     watchSlidesProgress: true,
-  });
-  var swiper2 = new Swiper(".details__gallery__big", {
+});
+var swiper2 = new Swiper(".details__gallery__big", {
     spaceBetween: 10,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
     thumbs: {
-      swiper: swiper,
+        swiper: swiper,
     },
-  });
+});
 
 
-  //Modal Gallery
+//Modal Gallery
 var swiper = new Swiper(".modal__gallery", {
     spaceBetween: 10,
     slidesPerView: 5,
     freeMode: true,
     watchSlidesProgress: true,
-  });
-  var swiper2 = new Swiper(".modal__gallery__big", {
+});
+var swiper2 = new Swiper(".modal__gallery__big", {
     spaceBetween: 10,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
     thumbs: {
-      swiper: swiper,
+        swiper: swiper,
     },
-  });
+});
 
 
 
 
 //line chart
-  function lineChart() {
+function lineChart() {
     const ctx = document.getElementById('lineChart');
     if (!ctx) return;
-  
+
     const myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: [
-          'Jan', 'Feb', 'Marc', 'April', 'May', 'Jun', 'July', 'Agust', 'Sept', 'Oct', 'Now', 'Dec',
-        ],
-        datasets: [{
-          label: '#',
-          data: [148, 100, 205, 110, 165, 145, 180, 156, 148, 220, 180, 245],
-          tension: 0.4,
-          backgroundColor: '#5F2DED',
-          borderColor: '#5F2DED',
-          borderWidth: 2,
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false,
-          },
+        type: 'line',
+        data: {
+            labels: [
+                'Jan', 'Feb', 'Marc', 'April', 'May', 'Jun', 'July', 'Agust', 'Sept', 'Oct', 'Now', 'Dec',
+            ],
+            datasets: [{
+                label: '#',
+                data: [148, 100, 205, 110, 165, 145, 180, 156, 148, 220, 180, 245],
+                tension: 0.4,
+                backgroundColor: '#5F2DED',
+                borderColor: '#5F2DED',
+                borderWidth: 2,
+            }]
         },
-        scales: {
-          y: {
-            min: 0,
-            max: 300,
-            ticks: {
-              stepSize: 50
-            }
-          }
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false,
+                },
+            },
+            scales: {
+                y: {
+                    min: 0,
+                    max: 300,
+                    ticks: {
+                        stepSize: 50
+                    }
+                }
+            },
         },
-      },
     });
-  }
+}
 
 
 
 //Pie Chart
-  function pieChart() {
+function pieChart() {
     const ctx = document.getElementById('pieChart');
     if (!ctx) return;
-  
-    const myChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-        labels: [ 'Direct', 'Referal', 'Organic', ],
-        datasets: [{
-          label: '#',
-          data: [40, 28, 32],
-        }]
-      },
-      options: {
-        cutout: '75%',
-        plugins: {
-          legend: {
-            position: 'left',
-          }
-        },
-        elements: {
-          arc: {
-            backgroundColor: '#5F2DED',
-            hoverBackgroundColor: '#5F2DED'
-          }
-        }
-      },
-    })
-  
-  
-    const getOrCreateLegendList = (chart, id) => {
-      const legendContainer = document.getElementById(id);
-      let listContainer = legendContainer.querySelector('ul');
-    
-      if (!listContainer) {
-        listContainer = document.createElement('ul');
-        listContainer.style.display = 'flex';
-        listContainer.style.flexDirection = 'row';
-        listContainer.style.margin = 0;
-        listContainer.style.padding = 0;
-    
-        legendContainer.appendChild(listContainer);
-      }
-    
-      return listContainer;
-    };
-    
-    const htmlLegendPlugin = {
-      id: 'htmlLegend',
-      afterUpdate(chart, args, options) {
-        const ul = getOrCreateLegendList(chart, options.containerID);
-    
-        // Remove old legend items
-        while (ul.firstChild) {
-          ul.firstChild.remove();
-        }
-    
-        // Reuse the built-in legendItems generator
-        const items = chart.options.plugins.legend.labels.generateLabels(chart);
-    
-        items.forEach(item => {
-          const li = document.createElement('li');
-          li.style.alignItems = 'center';
-          li.style.cursor = 'pointer';
-          li.style.display = 'flex';
-          li.style.flexDirection = 'row';
-          li.style.marginLeft = '10px';
-    
-          li.onclick = () => {
-            const {type} = chart.config;
-            if (type === 'pie' || type === 'doughnut') {
-              // Pie and doughnut charts only have a single dataset and visibility is per item
-              chart.toggleDataVisibility(item.index);
-            } else {
-              chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
-            }
-            chart.update();
-          };
-    
-          // Color box
-          const boxSpan = document.createElement('span');
-          boxSpan.style.background = item.fillStyle;
-          boxSpan.style.borderColor = item.strokeStyle;
-          boxSpan.style.borderWidth = item.lineWidth + 'px';
-          boxSpan.style.display = 'inline-block';
-          boxSpan.style.height = '20px';
-          boxSpan.style.marginRight = '10px';
-          boxSpan.style.width = '20px';
-    
-          // Text
-          const textContainer = document.createElement('p');
-          textContainer.style.color = item.fontColor;
-          textContainer.style.margin = 0;
-          textContainer.style.padding = 0;
-          textContainer.style.textDecoration = item.hidden ? 'line-through' : '';
-    
-          const text = document.createTextNode(item.text);
-          textContainer.appendChild(text);
-    
-          li.appendChild(boxSpan);
-          li.appendChild(textContainer);
-          ul.appendChild(li);
-        });
-      }
-    };
-  }
 
-  lineChart()
-  pieChart()
+    const myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['Direct', 'Referal', 'Organic', ],
+            datasets: [{
+                label: '#',
+                data: [40, 28, 32],
+            }]
+        },
+        options: {
+            cutout: '75%',
+            plugins: {
+                legend: {
+                    position: 'left',
+                }
+            },
+            elements: {
+                arc: {
+                    backgroundColor: '#5F2DED',
+                    hoverBackgroundColor: '#5F2DED'
+                }
+            }
+        },
+    })
+
+
+    const getOrCreateLegendList = (chart, id) => {
+        const legendContainer = document.getElementById(id);
+        let listContainer = legendContainer.querySelector('ul');
+
+        if (!listContainer) {
+            listContainer = document.createElement('ul');
+            listContainer.style.display = 'flex';
+            listContainer.style.flexDirection = 'row';
+            listContainer.style.margin = 0;
+            listContainer.style.padding = 0;
+
+            legendContainer.appendChild(listContainer);
+        }
+
+        return listContainer;
+    };
+
+    const htmlLegendPlugin = {
+        id: 'htmlLegend',
+        afterUpdate(chart, args, options) {
+            const ul = getOrCreateLegendList(chart, options.containerID);
+
+            // Remove old legend items
+            while (ul.firstChild) {
+                ul.firstChild.remove();
+            }
+
+            // Reuse the built-in legendItems generator
+            const items = chart.options.plugins.legend.labels.generateLabels(chart);
+
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.style.alignItems = 'center';
+                li.style.cursor = 'pointer';
+                li.style.display = 'flex';
+                li.style.flexDirection = 'row';
+                li.style.marginLeft = '10px';
+
+                li.onclick = () => {
+                    const { type } = chart.config;
+                    if (type === 'pie' || type === 'doughnut') {
+                        // Pie and doughnut charts only have a single dataset and visibility is per item
+                        chart.toggleDataVisibility(item.index);
+                    } else {
+                        chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+                    }
+                    chart.update();
+                };
+
+                // Color box
+                const boxSpan = document.createElement('span');
+                boxSpan.style.background = item.fillStyle;
+                boxSpan.style.borderColor = item.strokeStyle;
+                boxSpan.style.borderWidth = item.lineWidth + 'px';
+                boxSpan.style.display = 'inline-block';
+                boxSpan.style.height = '20px';
+                boxSpan.style.marginRight = '10px';
+                boxSpan.style.width = '20px';
+
+                // Text
+                const textContainer = document.createElement('p');
+                textContainer.style.color = item.fontColor;
+                textContainer.style.margin = 0;
+                textContainer.style.padding = 0;
+                textContainer.style.textDecoration = item.hidden ? 'line-through' : '';
+
+                const text = document.createTextNode(item.text);
+                textContainer.appendChild(text);
+
+                li.appendChild(boxSpan);
+                li.appendChild(textContainer);
+                ul.appendChild(li);
+            });
+        }
+    };
+}
+
+lineChart()
+pieChart()

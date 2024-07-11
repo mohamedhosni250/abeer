@@ -11,9 +11,9 @@ class UniversityController extends Controller
     {
         return view('pages.universities');
     }
-    public function show($id)
+    public function show($slug)
     {
-        $university = University::with('programs.degree')->findOrFail($id);
+        $university = University::where('slug', $slug)->firstOrFail();
         $degrees = $university->programs->groupBy('degree.name');
         $programs = $university->programs()->with('department')->paginate(9);
         return view('pages.university_single_page', compact('university', 'degrees', 'programs'));

@@ -34,21 +34,17 @@ class ProgramResource extends Resource
                 Textarea::make('description')
                     ->label('Description'),
                 TextInput::make('duration')
-                    ->label('Duration (years)')
-                    ->numeric(),
+                    ->label('Duration (years)'),
                 TextInput::make('study_mode')
                     ->label('Study Mode'),
                 TextInput::make('intake')
                     ->label('Intake Period'),
                 TextInput::make('fee_per_year')
-                    ->label('Fee Per Year')
-                    ->numeric(),
+                    ->label('Fee Per Year'),
                 TextInput::make('scholarship_percentage')
-                    ->label('Scholarship Percentage')
-                    ->numeric(),
+                    ->label('Scholarship Percentage'),
                 TextInput::make('scholarship_fee_per_year')
-                    ->label('Scholarship Fee Per Year')
-                    ->numeric(),
+                    ->label('Scholarship Fee Per Year'),
                 Select::make('university_id')
                     ->relationship('university', 'name')
                     ->label('University')->required(),

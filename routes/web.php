@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\UniversityController;
+use App\Models\University;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +21,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/search', [HomeController::class, 'search'])->name('search');
-Route::get('/universities', [HomeController::class, 'search'])->name('universities.index');
-
+Route::get('/universities', [UniversityController::class, 'index'])->name('universities.index');
+Route::get('university/{slug}', [UniversityController::class, 'show'])->name('university.show');
+// routes/web.php
+Route::get('programs/apply/{id}', [ProgramController::class, 'showApplyForm'])->name('programs.apply');
+Route::post('programs/apply', [ProgramController::class, 'submitApplication'])->name('programs.submitApplication');
+Route::get('/universities/{id}', [UniversityController::class, 'show'])->name('university.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

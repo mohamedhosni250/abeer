@@ -4,27 +4,26 @@
         <div class="row mt-4">
             @foreach ($universities as $university)
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="gridarea__wraper gridarea__wraper__2">
-                        <div class="gridarea__img">
-                            <a href=""><img loading="lazy" src="{{ asset($university->featured_image) }}"
-                                    alt="university"></a>
-                            <div class="gridarea__small__button">
-                                <div class="grid__badge">{{ $university->name }}</div>
+                    <div class="container mt-5">
+
+                        <div class="card mx-auto" style="">
+                            <img src="http://abeer.test/storage/uploads/featured_images/01J1THW2E5WDERK46K13VME0GE.png "
+                                class="card-img-top" alt="University Image">
+                            <div class="logo-container">
+                                <img src="{{ asset($university->logo_url) }}" alt="University Logo" class="img-fluid">
                             </div>
-                            <div class="gridarea__small__icon">
-                                <a href="#"><i class="icofont-heart-alt"></i></a>
+
+                            <div class="card-body text-center">
+                                <h3><a
+                                        href="{{ route('university.show', $university->slug) }}">{{ $university->name }}</a>
+                                </h3>
+                                <p class="card-text location-text text-muted"><i class="bi bi-geo-alt"></i>
+                                    {{ $university->location->name }} </p>
+                                <li><i class="icofont-book-alt"></i> {{ $university->programs_count }} Programs</li>
                             </div>
+
                         </div>
-                        <div class="gridarea__content">
-                            <div class="gridarea__list">
-                                <ul>
-                                    <li><i class="icofont-book-alt"></i> {{ $university->programs_count }} Programs</li>
-                                </ul>
-                            </div>
-                            <div class="gridarea__heading">
-                                <h3><a href="">{{ $university->name }}</a></h3>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             @endforeach

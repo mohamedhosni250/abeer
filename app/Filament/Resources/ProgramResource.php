@@ -42,7 +42,7 @@ class ProgramResource extends Resource
                 TextInput::make('fee_per_year')
                     ->label('Fee Per Year'),
                 TextInput::make('scholarship_percentage')
-                    ->label('Scholarship Percentage'),
+                    ->label('Scholarship Percentage')->numeric(),
                 TextInput::make('scholarship_fee_per_year')
                     ->label('Scholarship Fee Per Year'),
                 Select::make('university_id')

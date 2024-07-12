@@ -12,7 +12,7 @@ class Programs extends Component
 
     public $degreeName;
     public $universityId;
-    public $perPage = 6;
+    public $perPage = 12;
 
     protected $listeners = ['load-more' => 'loadMore'];
 

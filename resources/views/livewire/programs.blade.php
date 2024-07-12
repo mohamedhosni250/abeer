@@ -1,40 +1,46 @@
 <div>
     <div class="row">
         @foreach ($programs as $program)
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                <div class="gridarea__wraper gridarea__wraper__2">
-                    <div class="gridarea__img">
-                        <a href=""><img loading="lazy" src="{{ $program->image_url }}" alt="program"></a>
-                        <div class="gridarea__small__button">
-                            <div class="grid__badge">{{ $program->department->name }}</div>
-                            <div class="grid__badge">{{ $program->degree->name }}</div>
+            <div class="col-md-6 mb-4">
+                <div class="program-card">
+                    <h3 class="program-title">{{ $program->name }}</h3>
+                    <div class="info-container">
+                        <div>
+                            <span>{{ $program->fee_per_year }}$</span>
+                            <small>Per Year</small>
                         </div>
-                        <div class="gridarea__small__icon">
-                            <a href="#"><i class="icofont-heart-alt"></i></a>
+                        <div>
+                            <span>+{{ $program->duration }} Year</span>
+                            <small>Duration</small>
+                        </div>
+                        <div>
+                            <span>{{ $program->study_mode }}</span>
+                            <small>Study Mode</small>
+                        </div>
+                        <div>
+                            <span>{{ $program->intake }}</span>
+                            <small>Intake</small>
                         </div>
                     </div>
-                    <div class="gridarea__content">
-                        <div class="gridarea__list">
-                            <ul>
-                                <li><i class="icofont-book-alt"></i> {{ $program->lessons }} Lesson(s)</li>
-                                <li><i class="icofont-clock-time"></i> {{ $program->duration }}</li>
-                            </ul>
+                    <div class="scholarship-container">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Partial Scholarship</span>
+                            <span>Up to <strong>{{ $program->scholarship_percentage }}%</strong> = Per Year
+                                <strong style="color: #00B6ED;">{{ $program->fee_per_year }}$</strong></span>
                         </div>
-                        <div class="gridarea__heading">
-                            <h3><a href="">{{ $program->name }}</a></h3>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar"
+                                style="width: {{ $program->scholarship_percentage }}%;"
+                                aria-valuenow="{{ $program->scholarship_percentage }}" aria-valuemin="0"
+                                aria-valuemax="100"></div>
                         </div>
-                        <div class="gridarea__price">
-                            ${{ $program->fee_per_year }}
-                            <span><del class="del__2">{{ $program->discount_percentage }}% Off</del></span>
-                        </div>
-                        <div class="gridarea__bottom">
-                            <div class="gridarea__star">
-                                @for ($i = 0; $i < 5; $i++)
-                                    <i class="icofont-star {{ $i < $program->rating ? 'active' : '' }}"></i>
-                                @endfor
-                                <span>({{ $program->reviews_count }})</span>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="buttons-container">
+                        <a href="{{ route('programs.apply', ['id' => $program->id]) }}" class="btn apply-btn">
+                            Apply Now
+                        </a>
+                        <a href="" class="btn ask-btn">Ask
+                            Us</a>
                     </div>
                 </div>
             </div>
@@ -43,7 +49,7 @@
 
     @if ($programs->hasMorePages())
         <div class="text-center mt-4">
-            <button class="btn btn-primary" wire:click="loadMore">Load More</button>
+            <button class="rts-btn btn-primary" wire:click="loadMore">Load More</button>
         </div>
     @endif
 </div>

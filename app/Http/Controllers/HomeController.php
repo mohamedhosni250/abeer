@@ -5,20 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\Degree;
 use App\Models\Department;
 use App\Models\Program;
+use App\Models\University;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        $universities = University::where('is_featured', true)
+            ->where('is_visible', true)
+            ->get();
         $degrees = Degree::all();
         $departments = Department::all();
 
-        return view('welcome', compact('degrees', 'departments'));
+        return view('home', compact('universities', 'degrees', 'departments'));
     }
 
     public function search(Request $request)
     {
+        $departments = Department::all();
+        $degrees = Degree::all();
         $degreeId = $request->input('degree');
         $departmentId = $request->input('department');
 
@@ -28,6 +34,6 @@ class HomeController extends Controller
             ->get()
             ->groupBy('university.name');
 
-        return view('pages.search_results', compact('programs'));
+        return view('pages.search_results', compact('programs', 'degrees', 'departments'));
     }
 }

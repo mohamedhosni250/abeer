@@ -1,159 +1,120 @@
-<!-- footer__section__start -->
-<div class="footerarea">
-    <div class="container">
-        <div class="footerarea__newsletter__wraper">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
-                    <div class="footerarea__text">
-                        <h3>Still You Need Our <span>Support</span> ?</h3>
-                        <p>Don’t wait make a smart & logical quote here. Its pretty easy.</p>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-up">
-                    <div class="footerarea__newsletter">
-                        <div class="footerarea__newsletter__input">
-                            <form action="#">
-                                <input type="text" placeholder="Enter your email here">
-                                <div class="footerarea__newsletter__button">
-                                    <button type="submit" class="subscribe__btn">Subscribe Now</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- footer call to action area start -->
+    <div class="footer-callto-action-area bg-dark-footer-1">
 
-        <div class="footerarea__wrapper footerarea__wrapper__2">
+        <div class="container ptb--105">
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="fade-up">
-                    <div class="footerarea__inner footerarea__about__us">
-                        <div class="footerarea__heading">
-                            <h3>About us</h3>
-                        </div>
-                        <div class="footerarea__content">
-                            <p>Corporate clients and leisure travelers have been relying on Groundlink for dependable,
-                                safe, and professional chauffeured car end service in major cities across the world.</p>
-                        </div>
-                        <div class="footer__bottom__text">
-                            <div class="footer__bottom__icon">
-                                <i class="icofont-clock-time"></i>
+                <div class="col-lg-12">
+                    <!-- footer main wrapper -->
+                    <div class="footer-one-main-wrapper">
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized left-logo">
+                            <div class="head">
+                                <a href="#">
+                                    <img src="images/logo/logo-2.svg" alt="logo" loading="lazy">
+                                </a>
                             </div>
-                            <div class="footer__bottom__content">
-                                <h6>Opening Hours</h6>
-                                <span>Mon - Sat(8.00 - 6.00)</span>
-                                <span>Sunday - Closed</span>
+                            <div class="body">
+                                <p class="dsic">
+                                    We are passionate education dedicated to providing high-quality resources
+                                    learners all backgrounds.
+                                </p>
+                                <ul class="wrapper-list">
+                                    <li><i class="fa-regular fa-location-dot"></i>Yarra Park, Melbourne, Australia
+                                    </li>
+                                    <li><a href="call-to_61485826710.html"><i class="fa-regular fa-phone"></i>+(61)
+                                            485-826-710</a></li>
+                                </ul>
                             </div>
                         </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized">
+                            <div class="head">
+                                <h6 class="title">Quick Links</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="#">Latest Courses</a></li>
+                                    <li><a href="#">Mission & Vision</a></li>
+                                    <li><a href="#">Join a Carrer</a></li>
+                                    <li><a href="#">Our Approach</a></li>
+                                    <li><a href="#">Pricing Plan</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized">
+                            <div class="head">
+                                <h6 class="title">Explore</h6>
+                            </div>
+                            <div class="body">
+                                <ul class="menu">
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Upcoming Events</a></li>
+                                    <li><a href="#">Blog & News</a></li>
+                                    <li><a href="#">FAQ Question</a></li>
+                                    <li><a href="#">Course</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
+                        <!-- single sized  footer  -->
+                        <div class="footer-singl-wized input-area">
+                            <div class="head">
+                                <h6 class="title">Newsletter</h6>
+                            </div>
+                            <div class="body">
+                                <p class="disc">Subscribe Our newsletter get update our new course</p>
+                                <form action="#">
+                                    <div class="input-area-fill">
+                                        <input type="email" placeholder="Enter Your Email" required>
+                                        <button> Subscribe</button>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <input type="checkbox" id="exampleCheck1">
+                                        <label for="exampleCheck1">I agree to the terms of use and privacy
+                                            policy.</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- single sized  footer end -->
                     </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6" data-aos="fade-up">
-                    <div class="footerarea__inner">
-                        <div class="footerarea__heading">
-                            <h3>Useful Links</h3>
-                        </div>
-                        <div class="footerarea__list">
-                            <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Teachers</a></li>
-                                <li><a href="#">Partner</a></li>
-                                <li><a href="#">Room-Details</a></li>
-                                <li><a href="#">Gallery</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6" data-aos="fade-up">
-                    <div class="footerarea__inner footerarea__padding__left">
-                        <div class="footerarea__heading">
-                            <h3>Courses</h3>
-                        </div>
-                        <div class="footerarea__list">
-                            <ul>
-                                <li><a href="#">UI UX Design</a></li>
-                                <li><a href="#">Web Development</a></li>
-                                <li><a href="#">Business Strategy</a></li>
-                                <li><a href="#">Software Development</a></li>
-                                <li><a href="#">Business English</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12" data-aos="fade-up">
-                    <div class="footerarea__right__wraper footerarea__inner">
-                        <div class="footerarea__heading">
-                            <h3>Recent Posts</h3>
-                        </div>
-                        <div class="footerarea__right__list">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <div class="footerarea__right__img">
-                                            <img loading="lazy" src="{{ asset('img/footer/footer__1.png') }}"
-                                                alt="footerphoto">
-                                        </div>
-                                        <div class="footerarea__right__content">
-                                            <span>02 Apr 2024</span>
-                                            <h6>Best Your Business</h6>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="footerarea__right__img">
-                                            <img loading="lazy" src="{{ asset('img/footer/footer__2.png') }}"
-                                                alt="footerphoto">
-                                        </div>
-                                        <div class="footerarea__right__content">
-                                            <span>02 Apr 2024</span>
-                                            <h6>Keep Your Business</h6>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="footerarea__right__img">
-                                            <img loading="lazy" src="{{ asset('img/footer/footer__3.png') }}"
-                                                alt="footerphoto">
-                                        </div>
-                                        <div class="footerarea__right__content">
-                                            <span>02 Apr 2024</span>
-                                            <h6>Nice Your Business</h6>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <!-- footer main wrapper end -->
                 </div>
             </div>
         </div>
-        <div class="footerarea__copyright__wrapper footerarea__copyright__wrapper__2">
-            <div class="row">
-                <div class="col-xl-3 col-lg-3">
-                    <div class="copyright__logo">
-                        <a href="https://html.themewin.com/"><img loading="lazy"
-                                src="{{ asset('img/logo/logo_2.png') }}" alt="logo"></a>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6">
-                    <div class="footerarea__copyright__content footerarea__copyright__content__2">
-                        <p>Copyright © <span>2024</span> by edurock. All Rights Reserved.</p>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3">
-                    <div class="footerarea__icon footerarea__icon__2">
-                        <ul>
-                            <li><a href="http://facebook.com/"><i class="icofont-facebook"></i></a></li>
-                            <li><a href="http://twitter.com/"><i class="icofont-twitter"></i></a></li>
-                            <li><a href="http://vimeo.com/"><i class="icofont-vimeo"></i></a></li>
-                            <li><a href="http://linkedin.com/"><i class="icofont-linkedin"></i></a></li>
-                            <li><a href="http://skype.com/"><i class="icofont-skype"></i></a></li>
-                        </ul>
+        <div class="copyright-area-one-border">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-area-one">
+                            <p>Copyright © 2024 All Rights Reserved by Studyhub</p>
+                            <div class="social-copyright">
+                                <ul>
+                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- footer__section__end -->
+    <!-- footer call to action area end -->
+
+
+    <!-- rts backto top start -->
+    <div class="progress-wrap">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
+            </path>
+        </svg>
+    </div>
+    <!-- rts backto top end -->

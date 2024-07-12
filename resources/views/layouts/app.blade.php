@@ -1,114 +1,83 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>@yield('title', 'Home 1 | Edurock - Education LMS Template')</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- CSS here -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/aos.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/icofont.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/swiper-bundle.min.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studyhub LMS & University HTML Template</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/fav.png') }}">
+    <!-- fontawesome 6.4.2 -->
+    <link rel="stylesheet" href="{{ asset('css/plugins/fontawesome-6.css') }}">
+    <!-- swiper Css 10.2.0 -->
+    <link rel="stylesheet" href="{{ asset('css/plugins/swiper.min.css') }}">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" href="{{ asset('css/vendor/magnific-popup.css') }}">
+    <!-- Bootstrap 5.0.2 -->
+    <link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.min.css') }}">
+    <!-- jquery ui css -->
+    <link rel="stylesheet" href="{{ asset('css/vendor/jquery-ui.css') }}">
+    <!-- metismenu scss -->
+    <link rel="stylesheet" href="{{ asset('css/vendor/metismenu.css') }}">
+    <!-- custom style css -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
-        rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-    @livewireStyles
-    <script>
-        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-        if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia(
-                "(prefers-color-scheme: dark)").matches)) {
-            document.documentElement.classList.add("is_dark");
-        }
-        if (localStorage.getItem("theme-color") === "light") {
-            document.documentElement.classList.remove("is_dark");
-        }
-    </script>
 </head>
 
-<body class="body__wrapper">
-    {{-- @include('partials.preloader') --}}
-    @include('partials.mode_switcher')
-    @include('partials.header')
-    <main class="main_wrapper overflow-hidden">
-        @yield('content')
-    </main>
-    @include('partials.footer')
+@include('partials.header')
 
-    <!-- JS here -->
-    <script src="{{ asset('js/vendor/modernizr-3.5.0.min.js') }}"></script>
-    <script src="{{ asset('js/vendor/jquery-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('js/slick.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.meanmenu.min.js') }}"></script>
-    <script src="{{ asset('js/ajax-form.js') }}"></script>
-    <script src="{{ asset('js/wow.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.scrollUp.min.js') }}"></script>
-    <script src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('js/plugins.js') }}"></script>
-    <script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+@yield('content')
 
-    @livewireScripts
+@include('partials.footer')
 
-    <script>
-        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-        if (localStorage.getItem("theme-color") === "dark" || (!("theme-color" in localStorage) && window.matchMedia(
-                "(prefers-color-scheme: dark)").matches)) {
-            document.getElementById("light--to-dark-button")?.classList.add("dark--mode");
-        }
-        if (localStorage.getItem("theme-color") === "light") {
-            document.getElementById("light--to-dark-button")?.classList.remove("dark--mode");
-        }
-        const mySwiper = new Swiper('.swiper-container', {
-            slidesPerView: 3,
-            slidesPerColumn: 3,
-            slidesPerGroup: 3,
-            spaceBetween: 30,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            on: {
-                init: function() {},
-                orientationchange: function() {},
-                beforeResize: function() {
-                    let vw = window.innerWidth;
-                    if (vw > 1000) {
-                        mySwiper.params.slidesPerView = 3
-                        mySwiper.params.slidesPerColumn = 3
-                        mySwiper.params.slidesPerGroup = 3;
-                    } else {
-                        mySwiper.params.slidesPerView = 4
-                        mySwiper.params.slidesPerColumn = 2
-                        mySwiper.params.slidesPerGroup = 4;
-                    }
-                    mySwiper.init();
-                },
-            },
+<!-- Ensure jQuery is loaded first -->
+<script src="{{ asset('js/vendor/jquery.min.js') }}"></script>
+<!-- jQuery UI -->
+<script src="{{ asset('js/vendor/jquery-ui.js') }}"></script>
+<!-- Other scripts -->
+<script src="{{ asset('js/vendor/metismenu.js') }}"></script>
+<script src="{{ asset('js/vendor/magnifying-popup.js') }}"></script>
+<script src="{{ asset('js/plugins/swiper.js') }}"></script>
+<script src="{{ asset('js/plugins/counterup.js') }}"></script>
+<script src="{{ asset('js/vendor/waypoint.js') }}"></script>
+<script src="{{ asset('js/vendor/waw.js') }}"></script>
+<script src="{{ asset('js/plugins/isotop.js') }}"></script>
+<script src="{{ asset('js/plugins/imagesloaded.pkgd.min.js') }}"></script>
+<script src="{{ asset('js/plugins/resizer-sensor.js') }}"></script>
+<script src="{{ asset('js/plugins/sticky-sidebar.js') }}"></script>
+<script src="{{ asset('js/plugins/twinmax.js') }}"></script>
+<script src="{{ asset('js/vendor/chroma.min.js') }}"></script>
+<!-- Bootstrap 5.0.2 -->
+<script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/plugins/contact.form.js') }}"></script>
+<script src="{{ asset('js/plugins/calender.js') }}"></script>
+<!-- Main JS -->
+<script src="{{ asset('js/main.js') }}"></script>
+
+<!-- Your custom script -->
+<script>
+    $(document).ready(function() {
+        $('#applyModal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var university = button.data('university'); // Extract info from data-* attributes
+            var program = button.data('program');
+            var universityId = button.data('university-id');
+            var programId = button.data('program-id');
+
+            var modal = $(this);
+            modal.find('#universityName').text(university);
+            modal.find('#programName').text(program);
+            modal.find('#universityId').val(universityId);
+            modal.find('#programId').val(programId);
         });
-    </script>
+    });
+</script>
 
-    <style>
+@livewireScripts
 
-    </style>
-    @stack('scripts')
+<style>
+    /* Your custom styles here */
+</style>
+@stack('scripts')
 </body>
 
 </html>

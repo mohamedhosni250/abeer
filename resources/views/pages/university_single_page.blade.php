@@ -1,190 +1,518 @@
-<!-- resources/views/universities/show.blade.php -->
 @extends('layouts.app')
-
-@section('title', $university->name)
-
 @section('content')
-    <main class="main_wrapper overflow-hidden">
-        <div>
-            <div class="theme__shadow__circle"></div>
-            <div class="theme__shadow__circle shadow__right"></div>
-        </div>
-
-        <div class="blogarea__2 sp_top_100 sp_bottom_100">
+    <div class="single-university-page">
+        <div class="coursearea">
             <div class="container">
                 <div class="row">
 
-                    <div class="col-xl-8 col-lg-8">
-                        <div class="container mt-5">
-                            <div class="card mx-auto" style="">
-                                <img src="{{ asset($university->featured_image_url) }} "class="card-img-top"
-                                    alt="University Image">
-                                <div class="logo-container">
-                                    <img src="{{ asset($university->logo_url) }}" alt="University Logo" class="img-fluid">
-                                </div>
-                                <div class="card-body text-center">
-                                    <h5 class="card-title fw-bold">ASIA PACIFIC UNIVERSITY (APU)</h5>
-                                    <p class="card-text location-text text-muted"><i class="bi bi-geo-alt"></i> Kuala
-                                        Lumpur, Malaysia</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="blog__details__content__wraper">
-                            <div class="course__button__wraper" data-aos="fade-up">
-                                <div class="course__button">
-                                    <a href="#">Featured</a>
-                                    <a class="course__2" href="#">Ux Design</a>
-                                </div>
-                                <div class="course__date">
-                                    <p>Last Update:<span> Sep 29, 2024</span></p>
-                                </div>
-                            </div>
-                            <div class="course__details__heading" data-aos="fade-up">
-                                <h3>{{ $university->name }}</h3>
-                            </div>
-                            <div class="course__details__price" data-aos="fade-up">
-                                <ul>
-                                    <li>
-                                        <div class="course__price">
-                                            {{ $university->location->name }}
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="course__details__date">
-                                            <i class="icofont-book-alt"></i> 23 Lesson
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="course__star">
-                                            <i class="icofont-star"></i>
-                                            <i class="icofont-star"></i>
-                                            <i class="icofont-star"></i>
-                                            <i class="icofont-star"></i>
-                                            <i class="icofont-star"></i>
-                                            <span>(44)</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="course__details__paragraph" data-aos="fade-up">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate
-                                    vestibulum rhoncus, dolor eget viverra pretium, dolor tellus aliquet nunc, vitae
-                                    ultricies erat elit eu lacus. Vestibulum non justo consectetur, cursus ante, tincidunt
-                                    sapien. Nulla quis diam sit amet turpis interd enim. Vivamus faucibus ex sed nibh
-                                    egestas elementum. Mauris et bibendum dui. Aenean consequat pulvinar luctus. Suspendisse
-                                    consectetur tristique.
-                                </p>
-                            </div>
-                            <div class="accordion content__cirriculum__wrap" id="accordionExample">
-                                @foreach ($university->details as $index => $detail)
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="heading{{ $index }}">
-                                            <button
-                                                class="accordion-button @if ($index > 0) collapsed @endif"
-                                                type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapse{{ $index }}"
-                                                aria-expanded="@if ($index === 0) true @else false @endif"
-                                                aria-controls="collapse{{ $index }}">
-                                                {{ $detail->tab_name }}
-                                            </button>
-                                        </h2>
-                                        <div id="collapse{{ $index }}"
-                                            class="accordion-collapse collapse @if ($index === 0) show @endif"
-                                            aria-labelledby="heading{{ $index }}" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                {!! $detail->content !!}
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-
-                            {{-- hosni new section --}}
-                            <div class="coursearea sp_top_100 sp_bottom_100">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-xl-12">
-                                            <div class="course__text__wraper">
-                                                <div class="course__text">
-                                                    <p>Showing {{ $university->programs->count() }} Results</p>
-                                                </div>
-                                                <div class="course__icon">
-                                                    <ul class="nav property__team__tap" id="myTab" role="tablist">
-                                                        @foreach ($degrees as $degreeId => $programs)
-                                                            <li class="nav-item" role="presentation">
-                                                                <a href="#degree_{{ $degreeId }}"
-                                                                    class="single__tab__link @if ($loop->first) active @endif"
-                                                                    data-bs-toggle="tab" role="tab">
-                                                                    {{ $programs->first()->degree->name }}
-                                                                    <!-- Adjust this line based on your data structure -->
-                                                                </a>
-                                                            </li>
-                                                        @endforeach
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="tab-content tab__content__wrapper" id="myTabContent">
-                                        @foreach ($degrees as $degreeId => $programs)
-                                            <div class="tab-pane fade @if ($loop->first) show active @endif"
-                                                id="degree_{{ $degreeId }}" role="tabpanel">
-                                                <livewire:programs :degreeName="$degreeId" :universityId="$university->id" />
-                                            </div>
-                                        @endforeach
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- Include Livewire component here -->
-                        </div>
-
+                    <div class="col-lg-8">
+                        <img src="{{ asset($university->featured_image_url) }}" class="img-fluid rounded"
+                            alt="University Image">
                     </div>
-                    {{-- custom hosni  --}}
-                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
-
-
-
-                        <div class="container mt-5">
-                            <div class="info-card">
-                                <div class="icon-container">
-                                    <div>
-                                        <i class="bi bi-star-fill" style="font-size: 2rem; color: #007bff;"></i>
-                                        <h5 class="fw-bold">Top</h5>
-                                        <p class="text-muted">Ranking</p>
-                                    </div>
-                                    <div>
-                                        <i class="bi bi-mortarboard-fill" style="font-size: 2rem; color: #007bff;"></i>
-                                        <h5 class="fw-bold">+10k</h5>
-                                        <p class="text-muted">Students</p>
-                                    </div>
-                                    <div>
-                                        <i class="bi bi-book-fill" style="font-size: 2rem; color: #007bff;"></i>
-                                        <h5 class="fw-bold">87</h5>
-                                        <p class="text-muted">Programs</p>
-                                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="info-card">
+                            <img width="100px" src="{{ asset($university->logo_url) }}" alt="">
+                            <div class="icon-container">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                    <h5 class="fw-bold">Top</h5>
+                                    <p class="text-muted">Ranking</p>
                                 </div>
-                                <div class="divider">
-                                    <i class="bi bi-info-circle-fill" style="font-size: 1.2rem; color: #007bff;"></i>
+                                <div>
+                                    <i class="fas fa-user-graduate"></i>
+                                    <h5 class="fw-bold">+10k</h5>
+                                    <p class="text-muted">Students</p>
                                 </div>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-dot"></i> Globally top 2.2%, 5 Stars Plus in QS
-                                        2024.</li>
-                                    <li class="mb-2"><i class="bi bi-dot"></i> Thriving international community: 13,000+
-                                        students from 130+ countries.</li>
-                                    <li class="mb-2"><i class="bi bi-dot"></i> 100% employability rate upon graduation
-                                        (Ministry-certified).</li>
-                                </ul>
-                                <h6 class="fw-bold">Starting From <span style="color: #007bff;">7100$</span></h6>
-                                <a href="#" class="btn btn-primary w-100 mt-3">APPLY NOW</a>
+                                <div>
+                                    <i class="fas fa-book"></i>
+                                    <h5 class="fw-bold">87</h5>
+                                    <p class="text-muted">Programs</p>
+                                </div>
                             </div>
+                            <div class="divider">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <ul>
+                                <li class="mb-2"><i class="fas fa-dot-circle"></i> Globally top 2.2%, 5 Stars Plus in QS
+                                    2024.</li>
+                                <li class="mb-2"><i class="fas fa-dot-circle"></i> Thriving international community:
+                                    13,000+
+                                    students from 130+ countries.</li>
+                                <li class="mb-2"><i class="fas fa-dot-circle"></i> 100% employability rate upon graduation
+                                    (Ministry-certified).</li>
+                            </ul>
+                            <h6 class="fw-bold">Starting From <span style="color: #007bff;">$7100</span></h6>
+                            <a href="#">APPLY NOW</a>
                         </div>
-
-
                     </div>
                 </div>
-    </main>
+            </div>
+        </div>
 
-@endsection
+        <div class="container">
+
+            {{-- univeristy details  --}}
+            <div class="course-content-wrapper-main">
+                <h5 class="title">Course Content</h5>
+
+                <!-- course content accordion area -->
+                <div class="accordion mt--30" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <span>Introduction</span>
+                                <span>3 Lectures . 9 min</span>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Introduction to the course</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="play">Preview</span>
+                                        <span>9 min</span>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Introduction to the course</span>
+                                    </div>
+                                    <div class="right">
+                                        <span class="play">Preview</span>
+                                        <span>9 min</span>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Introduction to the course</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span>Learn to Storyboard</span>
+                                <span>7 Lectures . 120 min</span>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Become a storyboard artist</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>storyboard artist</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Introduction PHP</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>LEarning Fundamentsl Elementor</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Enter to the course</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Main Part of the course</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Function About PHP</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <span>How to draw characters, layouts, and scenes</span>
+                                <span>7 Lectures . 83 min</span>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Become a storyboard artist</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>storyboard artist</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Introduction PHP</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>LEarning Fundamentsl Elementor</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Enter to the course</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Main Part of the course</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Function About PHP</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <span>1-point and 2-point perspective</span>
+                                <span>7 Lectures . 72 min</span>
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Become a storyboard artist</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>storyboard artist</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Introduction PHP</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>LEarning Fundamentsl Elementor</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Enter to the course</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Main Part of the course</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Function About PHP</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <span>Digital drawing application</span>
+                                <span>7 Lectures . 90 min</span>
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Become a storyboard artist</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>storyboard artist</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Introduction PHP</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>LEarning Fundamentsl Elementor</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Enter to the course</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Main Part of the course</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                                <!-- play single area start -->
+                                <a href="#" class="play-vedio-wrapper">
+                                    <div class="left">
+                                        <i class="fa-light fa-circle-play"></i>
+                                        <span>Function About PHP</span>
+                                    </div>
+                                    <div class="right">
+                                        <i class="fa-regular fa-lock"></i>
+                                    </div>
+                                </a>
+                                <!-- play single area end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- course content accordion area end -->
+            </div>
+
+            {{-- tabs --}}
+            <div class="course-details-btn-wrapper full-width pb--50">
+                <div class="course__text">
+                    <p>Showing {{ $university->programs->count() }} Results</p>
+                </div>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+
+                    @foreach ($degrees as $degreeId => $programs)
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link @if ($loop->first) active @endif" id="home-tab"
+                                data-bs-toggle="tab" data-bs-target="#degree_{{ $degreeId }}" type="button"
+                                role="tab" aria-controls="home" aria-selected="true">
+                                {{ $programs->first()->degree->name }}
+                            </button>
+
+                        </li>
+                    @endforeach
+
+                </ul>
+            </div>
+            <div class="tab-content mt--50" id="myTabContent">
+                <div class="tab-pane fade  show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="tab-content tab__content__wrapper" id="myTabContent">
+                        @foreach ($degrees as $degreeId => $programs)
+                            <div class="tab-pane fade @if ($loop->first) show active @endif"
+                                id="degree_{{ $degreeId }}" role="tabpanel">
+                                <livewire:programs :degreeName="$degreeId" :universityId="$university->id" />
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="course-content-wrapper-main">
+                        <h5 class="title">Course Content</h5>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    @endsection

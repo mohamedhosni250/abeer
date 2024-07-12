@@ -1,37 +1,48 @@
 <div class="coursearea sp_top_100 sp_bottom_100">
     <div class="container">
-
         <div class="row mt-4">
             @foreach ($universities as $university)
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div class="container mt-5">
-
-                        <div class="card mx-auto" style="">
-                            <img src="http://abeer.test/storage/uploads/featured_images/01J1THW2E5WDERK46K13VME0GE.png "
-                                class="card-img-top" alt="University Image">
-                            <div class="logo-container">
-                                <img src="{{ asset($university->logo_url) }}" alt="University Logo" class="img-fluid">
-                            </div>
-
-                            <div class="card-body text-center">
-                                <h3><a
-                                        href="{{ route('university.show', $university->slug) }}">{{ $university->name }}</a>
-                                </h3>
-                                <p class="card-text location-text text-muted"><i class="bi bi-geo-alt"></i>
-                                    {{ $university->location->name }} </p>
-                                <li><i class="icofont-book-alt"></i> {{ $university->programs_count }} Programs</li>
-                            </div>
-
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4">
+                    <div class="rts-single-course">
+                        <a href="{{ route('university.show', $university->slug) }}" class="thumbnail">
+                            <img src="{{ $university->featured_image_url }}" alt="course">
+                        </a>
+                        <div class="avatar-wrapper">
+                            <img src="{{ $university->logo_url }}" alt="teacher avatar" class="teacher-avatar">
                         </div>
-
+                        <div class="University-bottom">
+                            <a href="{{ route('university.show', $university->slug) }}">
+                                <h5 class="card-title title">{{ $university->name }}</h5>
+                            </a>
+                            <div class="lesson-studente">
+                                <div class="lesson">
+                                    <i class="fa-light fa-calendar-lines-pen"></i>
+                                    <span>{{ $university->programs_count }} Programs</span>
+                                </div>
+                                <div class="lesson">
+                                    <i class="fa-light fa-user-group"></i>
+                                    <span>{{ $university->students_count }} Students</span>
+                                </div>
+                            </div>
+                            <p style="font-size: 18px;">
+                                Start From <span
+                                    style="color: #00B6ED; font-weight: bold;">${{ $university->starting_fee }}</span>
+                                per year
+                            </p>
+                            <div style="justify-content: flex-end;" class="tags-area-wrapper">
+                                <div class="single-price">
+                                    <span>Read More </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             @endforeach
         </div>
 
         @if ($universities->hasMorePages())
-            <div class="load-more-container text-center mt-4">
-                <button wire:click="loadMore" class="btn btn-primary">Load More</button>
+            <div style="width: 200px ; margin:20px" class="load-more-container text-center mt-4">
+                <button wire:click="loadMore" class="rts-btn btn-primary">Load More</button>
             </div>
         @endif
     </div>

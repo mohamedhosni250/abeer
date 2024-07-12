@@ -1,82 +1,348 @@
-.card-img-top {
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+@media only screen and (max-width: 600px) {
+    .category-search-input {
+        display: flex;
+        align-items: center;
+        background: #FFFFFF;
+        border-radius: 4px;
+        max-width: 100%;
+        position: relative;
+    }
 }
 
-.logo-container {
+.headline {
+    text-align: left;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    color: #0b3a5b;
+}
+
+.support-text {
+    line-height: 2.8rem;
+    text-align: left;
+    font-weight: normal;
+    color: #757575;
+    text-transform: uppercase;
+    display: block;
+    font-family: 'Montserrat';
+    font-size: 15px;
+}
+
+.highlight {
+    color: #00c3fe;
+}
+
+.line {
+    width: 50px;
+    height: 3px;
+    background-color: #00c3fe;
+    margin: 2px
+}
+
+
+/* univeresities wrapper card  */
+
+.avatar-wrapper {
+    position: absolute;
+    top: 45%;
+    right: 5%;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.teacher-avatar {
     width: 80px;
     height: 80px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: -40px auto 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-.location-text {
-    font-size: 0.9rem;
+.rts-single-course {
+    padding: 0;
+    border-radius: 15px;
+    border: 1px solid #EFECFF;
+    position: relative;
+    height: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.info-card {
-    max-width: 400px;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
+.University-bottom {
+    padding: 24px;
+    min-height: 340px;
+}
+
+.University-bottom h5 {
+    min-height: 50px;
+}
+
+.rts-single-course .thumbnail img {
+    max-height: 250px;
+}
+
+.single-price {
+    background: #00C3FE;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.card-title {
+    width: 70%;
+}
+
+
+/* search form c ss  */
+
+.custom-form {
+    background-color: #002c4a;
+    /* Adjust the color to match your design */
     padding: 20px;
+    border-radius: 8px;
 }
 
-.info-card h5,
-.info-card p {
-    margin-bottom: 0.5rem;
+.custom-form .btn-search {
+    background-color: #00B6ED;
+    color: white;
+    height: calc(2.75rem + 10px);
+    /* Match the height of the button with the input fields */
+    font-size: 1.25rem;
+    /* Increase the font size of the button */
 }
 
-.info-card .icon-container {
+.custom-form .form-control {
+    height: calc(2.75rem + 10px);
+    font-size: 16px;
+    padding-left: 2.5rem;
+    font-weight: 500;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    /* Space between elements */
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 0;
+    /* Remove default margin-bottom */
+}
+
+.form-group .fa-chevron-down {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 1.80rem;
+    color: #6c757d;
+}
+
+.btn-search .fa-search {
+    margin-right: 0.9rem;
+}
+
+
+/* single university page  */
+
+.course-details-btn-wrapper.full-width ul {
+    justify-content: unset !important;
+}
+
+.single-university-page .coursearea {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.single-university-page .info-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 70px;
+}
+
+.single-university-page .icon-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
 }
 
-.info-card .icon-container div {
+.single-university-page .icon-container div {
     text-align: center;
 }
 
-.info-card .divider {
+.single-university-page .icon-container i {
+    /* Adjusted font size */
+    color: #007bff;
+}
+
+.single-university-page .icon-container h5 {
+    /* Adjusted font size */
+    margin: 0;
+}
+
+.single-university-page .icon-container p {
+    /* Adjusted font size */
+    margin: 0;
+}
+
+.single-university-page .divider {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.single-university-page .divider i {
+    font-size: 15px;
+    /* Adjusted font size */
+    color: #007bff;
+}
+
+.single-university-page .info-card ul {
+    padding-left: 0;
+    list-style: none;
+    /* Adjusted font size */
+}
+
+.single-university-page .info-card ul li {
+    margin-bottom: 10px;
+}
+
+.single-university-page .info-card ul li i {
+    color: #007bff;
+    margin-right: 5px;
+}
+
+.single-university-page .info-card h6 {
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.single-university-page .info-card h6 span {
+    color: #00B6ED;
+}
+
+.single-university-page .info-card a {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    background-color: #00B6ED;
+    padding: 10px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.single-university-page .info-card a:hover {
+    text-decoration: none;
+    background-color: #007bff;
+}
+
+
+/* Program search page css  */
+
+.program-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.program-card .university-logo {
+    width: 120px;
+}
+
+.program-card .university-name {
+    font-weight: bold;
+    color: #004080;
+}
+
+.program-card .program-title {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.program-card .info-container {
     display: flex;
-    align-items: center;
-    margin: 1rem 0;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
-.info-card .divider::before,
-.info-card .divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid #ddd;
+.program-card .info-container div {
+    text-align: center;
 }
 
-.info-card .divider::before {
-    margin-right: 10px;
+.program-card .info-container div span {
+    display: block;
+    font-weight: bold;
 }
 
-.info-card .divider::after {
-    margin-left: 10px;
+.program-card .info-container div small {
+    display: block;
+    color: #6c757d;
 }
 
-.university-card img {
-    width: 100%;
-    height: auto;
+.program-card .scholarship-container {
+    margin-bottom: 20px;
 }
 
-.university-logo {
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    background: white;
-    border-radius: 50%;
+.program-card .scholarship-container .progress {
+    height: 10px;
+    background-color: #e9ecef;
 }
 
-.card {
-    position: relative;
-    overflow: hidden;
+.program-card .scholarship-container .progress-bar {
+    background-color: #00B6ED;
+}
+
+.program-card .scholarship-container span {
+    font-weight: bold;
+    color: #6c757d;
+}
+
+.program-card .buttons-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.program-card .buttons-container .btn {
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.program-card .apply-btn {
+    background-color: #00B6ED;
+    color: #fff;
+}
+
+.program-card .apply-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.program-card .ask-btn {
+    border: 1px solid #00B6ED;
+    color: #00B6ED;
+}
+
+.program-card .ask-btn:hover {
+    background-color: #00B6ED;
+    color: #fff;
+}
+
+@media (max-width: 576px) {
+    .program-card .info-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .program-card .buttons-container {
+        flex-direction: column;
+    }
+    .program-card .buttons-container .btn {
+        margin-bottom: 10px;
+    }
 }

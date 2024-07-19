@@ -1,83 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studyhub LMS & University HTML Template</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/fav.png') }}">
-    <!-- fontawesome 6.4.2 -->
-    <link rel="stylesheet" href="{{ asset('css/plugins/fontawesome-6.css') }}">
-    <!-- swiper Css 10.2.0 -->
-    <link rel="stylesheet" href="{{ asset('css/plugins/swiper.min.css') }}">
-    <!-- magnific popup css -->
-    <link rel="stylesheet" href="{{ asset('css/vendor/magnific-popup.css') }}">
-    <!-- Bootstrap 5.0.2 -->
-    <link rel="stylesheet" href="{{ asset('css/vendor/bootstrap.min.css') }}">
-    <!-- jquery ui css -->
-    <link rel="stylesheet" href="{{ asset('css/vendor/jquery-ui.css') }}">
-    <!-- metismenu scss -->
-    <link rel="stylesheet" href="{{ asset('css/vendor/metismenu.css') }}">
-    <!-- custom style css -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-</head>
+        <title>{{ config('app.name', 'Laravel') }}</title>
 
-@include('partials.header')
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-@yield('content')
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="font-sans antialiased">
+        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+            @include('layouts.navigation')
 
-@include('partials.footer')
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white dark:bg-gray-800 shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
 
-<!-- Ensure jQuery is loaded first -->
-<script src="{{ asset('js/vendor/jquery.min.js') }}"></script>
-<!-- jQuery UI -->
-<script src="{{ asset('js/vendor/jquery-ui.js') }}"></script>
-<!-- Other scripts -->
-<script src="{{ asset('js/vendor/metismenu.js') }}"></script>
-<script src="{{ asset('js/vendor/magnifying-popup.js') }}"></script>
-<script src="{{ asset('js/plugins/swiper.js') }}"></script>
-<script src="{{ asset('js/plugins/counterup.js') }}"></script>
-<script src="{{ asset('js/vendor/waypoint.js') }}"></script>
-<script src="{{ asset('js/vendor/waw.js') }}"></script>
-<script src="{{ asset('js/plugins/isotop.js') }}"></script>
-<script src="{{ asset('js/plugins/imagesloaded.pkgd.min.js') }}"></script>
-<script src="{{ asset('js/plugins/resizer-sensor.js') }}"></script>
-<script src="{{ asset('js/plugins/sticky-sidebar.js') }}"></script>
-<script src="{{ asset('js/plugins/twinmax.js') }}"></script>
-<script src="{{ asset('js/vendor/chroma.min.js') }}"></script>
-<!-- Bootstrap 5.0.2 -->
-<script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/plugins/contact.form.js') }}"></script>
-<script src="{{ asset('js/plugins/calender.js') }}"></script>
-<!-- Main JS -->
-<script src="{{ asset('js/main.js') }}"></script>
-
-<!-- Your custom script -->
-<script>
-    $(document).ready(function() {
-        $('#applyModal').on('show.bs.modal', function(event) {
-            var button = $(event.relatedTarget); // Button that triggered the modal
-            var university = button.data('university'); // Extract info from data-* attributes
-            var program = button.data('program');
-            var universityId = button.data('university-id');
-            var programId = button.data('program-id');
-
-            var modal = $(this);
-            modal.find('#universityName').text(university);
-            modal.find('#programName').text(program);
-            modal.find('#universityId').val(universityId);
-            modal.find('#programId').val(programId);
-        });
-    });
-</script>
-
-@livewireScripts
-
-<style>
-    /* Your custom styles here */
-</style>
-@stack('scripts')
-</body>
-
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div>
+    </body>
 </html>

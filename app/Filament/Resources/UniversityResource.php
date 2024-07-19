@@ -2,22 +2,27 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Exports\UniversityExporter;
+use App\Filament\Imports\UniversityImporter;
 use App\Filament\Resources\UniversityResource\Pages;
 use App\Models\Location;
 use App\Models\University;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables;
 use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Actions\ExportAction;
+
+use Filament\Tables\Actions\ExportBulkAction;
+use Filament\Tables\Actions\ImportAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\ToggleColumn;
@@ -48,8 +53,24 @@ class UniversityResource extends Resource
                     ->label('Featured Image')
                     ->directory('featured_images'),
                 Section::make('description ')->schema([
-                    MarkdownEditor::make('description')
-                        ->label('Description'),
+                    RichEditor::make('description')
+                        ->toolbarButtons([
+                            'attachFiles',
+                            'blockquote',
+                            'bold',
+                            'bulletList',
+                            'codeBlock',
+                            'h2',
+                            'h3',
+                            'italic',
+                            'link',
+                            'orderedList',
+                            'redo',
+                            'strike',
+                            'underline',
+                            'undo',
+                        ])
+
                 ]),
                 Select::make('location_id')
                     ->label('Location')
@@ -83,7 +104,6 @@ class UniversityResource extends Resource
                 TextColumn::make('name')->label('University Name'),
                 ImageColumn::make('logo')->label('Logo'),
                 TextColumn::make('location.name')->label('Location'),
-
                 TextColumn::make('ranking')->label('Ranking'),
                 TextColumn::make('students_count')->label('Students Count'),
                 TextColumn::make('programs_count')->label('Programs Count'),
@@ -95,9 +115,16 @@ class UniversityResource extends Resource
             ])
             ->actions([
                 EditAction::make(),
+            ])->headerActions([
+                ExportAction::make()->exporter(UniversityExporter::class),
+                ImportAction::make()
+                    ->importer(UniversityImporter::class),
+
             ])
             ->bulkActions([
                 DeleteBulkAction::make(),
+                ExportBulkAction::make()->exporter(UniversityExporter::class),
+
             ]);
     }
 

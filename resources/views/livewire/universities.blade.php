@@ -5,10 +5,13 @@
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 mb-4">
                     <div class="rts-single-course">
                         <a href="{{ route('university.show', $university->slug) }}" class="thumbnail">
-                            <img src="{{ $university->featured_image_url }}" alt="course">
+                            <img src="{{ $university->featured_image_url }}" alt="course"
+                                onerror="this.onerror=null;this.src='images/placeholder.png';">
                         </a>
                         <div class="avatar-wrapper">
-                            <img src="{{ $university->logo_url }}" alt="teacher avatar" class="teacher-avatar">
+                            @if ($university->logo_url)
+                                <img src="{{ $university->logo_url }}" class="teacher-avatar">
+                            @endif
                         </div>
                         <div class="University-bottom">
                             <a href="{{ route('university.show', $university->slug) }}">

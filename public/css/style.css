@@ -56,11 +56,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&amp;display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 :root {
-    --color-primary: #553CDF;
+    --color-primary: #0B3A5B;
     --color-primary-gym: #B10D00;
     --color-primary-kitchen: #ff6d1c;
-    --color-secondary: #1F1F25;
+    --color-secondary: #00c3fe;
     --color-secondary-2: #110C2D;
     --color-body: #737477;
     --color-body-2: #F9F8FF;
@@ -722,7 +723,7 @@ ol ul {
 }
 
 .rts-section-gapBottom {
-    padding-bottom: 120px;
+    padding-bottom: 50px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -15060,7 +15061,7 @@ nav ul li a {
 }
 
 .banner-area-one.v-2 {
-    height: 861px;
+    height: 790px;
     background-image: url(../images/banner/01.jpg);
 }
 
@@ -26347,7 +26348,7 @@ edit .quantity-edit button {
 }
 
 .course-details-btn-wrapper ul li button.nav-link.active {
-    background: #553CDF;
+    background: #0b3a5b;
     color: #fff;
 }
 

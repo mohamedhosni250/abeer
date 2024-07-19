@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 @section('content')
     <!-- Hero  area start -->
     <div class="banner-two-flow-1920">
@@ -13,8 +13,10 @@
                                     <span>Gateway to Lifelong Learning</span>
                                 </div>
                                 <h1 class="title-banner">
-                                    Welcome to Your Online
-                                    <span>Learning Journey</span>
+                                    Uncover Your
+                                    Talents
+                                    <br>
+                                    <span>Abeed Education</span>
                                     <img src="{{ asset('images/banner/06.png') }}" alt="banner">
                                 </h1>
                                 <p class="disc">We Have 30k+ Online Courses & 300K+ Online Registered Student.</p>
@@ -42,7 +44,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-3 col-12">
-                                                <button type="submit" class="btn btn-search btn-block mt-md-0 mt-2">
+                                                <button type="submit" class=" btn apply-btn btn-block mt-md-0 mt-2">
                                                     <i class="fas fa-search"></i> SEARCH
                                                 </button>
                                             </div>
@@ -52,59 +54,12 @@
                                 {{-- search form end  --}}
                                 <div class="banner-tags-wrapper">
                                     <!-- single tags wrapper -->
-                                    <div class="single-tags-banner">
-                                        <p>UI/UX Design</p>
-                                    </div>
-                                    <!-- single tags wrapper end -->
-                                    <!-- single tags wrapper -->
-                                    <div class="single-tags-banner">
-                                        <p>Web Design</p>
-                                    </div>
-                                    <!-- single tags wrapper end -->
-                                    <!-- single tags wrapper -->
-                                    <div class="single-tags-banner">
-                                        <p>Marketing</p>
-                                    </div>
-                                    <!-- single tags wrapper end -->
-                                    <!-- single tags wrapper -->
-                                    <div class="single-tags-banner">
-                                        <p>Digital Marketing</p>
-                                    </div>
-                                    <!-- single tags wrapper end -->
-                                    <!-- single tags wrapper -->
-                                    <div class="single-tags-banner">
-                                        <p>Finance</p>
-                                    </div>
-                                    <!-- single tags wrapper end -->
-                                    <!-- single tags wrapper -->
-                                    <div class="single-tags-banner">
-                                        <p>Dancing</p>
-                                    </div>
-                                    <!-- single tags wrapper end -->
-                                    <!-- single tags wrapper -->
-                                    <div class="single-tags-banner">
-                                        <p>Lifestyle</p>
-                                    </div>
-                                    <!-- single tags wrapper end -->
-                                    <!-- single tags wrapper -->
-                                    <div class="single-tags-banner">
-                                        <p>Music</p>
-                                    </div>
-                                    <!-- single tags wrapper end -->
-                                    <!-- single tags wrapper -->
-                                    <div class="single-tags-banner">
-                                        <p>Business</p>
-                                    </div>
-                                    <!-- single tags wrapper end -->
-                                    <!-- single tags wrapper -->
-                                    <div class="single-tags-banner">
-                                        <p>SEO</p>
-                                    </div>
-                                    <!-- single tags wrapper end -->
-                                    <!-- single tags wrapper -->
-                                    <div class="single-tags-banner">
-                                        <p>Java</p>
-                                    </div>
+                                    @foreach ($departments->take(4) as $department)
+                                        <div class="single-tags-banner">
+                                            <p>{{ $department->name }}</p>
+                                        </div>
+                                    @endforeach
+
                                     <!-- single tags wrapper end -->
                                 </div>
                             </div>
@@ -247,12 +202,12 @@
                                     <div class="avatar-wrapper">
                                         <img src="{{ $university->logo_url }}" alt="teacher avatar"
                                             class="teacher-avatar">
-                                    </div>ع
+                                    </div>
                                     <div class="University-bottom">
                                         <a href="{{ route('university.show', $university->slug) }}">
                                             <h5 class="card-title title">{{ $university->name }}</h5>
                                         </a>
-                                        <div class="lesson-studente">
+                                        <div style="    margin-top: 9%;" class="lesson-studente">
                                             <div class="lesson">
                                                 <i class="fa-light fa-calendar-lines-pen"></i>
                                                 <span>{{ $university->programs_count }} Programs</span>
@@ -266,12 +221,13 @@
                                                 <span>{{ $university->rating }} Students</span>
                                             </div>
                                         </div>
-                                        <p style="font-size: 18px;">Start From <span
-                                                style="color: #00B6ED; font-weight: bold;">${{ $university->starting_fee }}</span>
+                                        <p style="font-size: 18px; font-weight:bold">Start From <span
+                                                style="color: #0B3A5B; font-weight: bold;">${{ $university->starting_fee }}</span>
                                             per year </p>
                                         <div style="justify-content: flex-end;" class="tags-area-wrapper">
                                             <div class="single-price">
-                                                <span>Read More </span>
+                                                <a href="{{ route('university.show', $university->slug) }}"> <span>Read
+                                                        More </span></a>
                                             </div>
                                         </div>
                                     </div>
@@ -323,9 +279,13 @@
                             <img src="{{ asset('images/banner/bulb-2.png') }}" alt="icon">
                             <span>Why Choose Us</span>
                         </div>
-                        <h2 class="title">Studyhub Your Path to Excellence & Success</h2>
-                        <p class="post-title">We are passionate about education and dedicated to providing high- <br>
-                            quality learning resources for learners of all backgrounds.</p>
+                        <h2 class="title"> Your Path to Excellence & Success with ABEER EDUCATION
+                        </h2>
+                        <p class="post-title">Our beloved students are at the heart of everything we do at Abeer Education.
+                            We are committed to ensuring the utmost quality in the services we provide, understanding that
+                            consistent excellence is the cornerstone of our success. Abeer Education Education offers a
+                            comprehensive range of services that cover all aspects of education, leaving no stone unturned.
+                        </p>
                     </div>
                     <div class="why-choose-main-wrapper-1">
                         <!-- single choose reason -->
@@ -383,8 +343,8 @@
                         </div>
                         <!-- single choose reason end -->
                     </div>
-                    <a href="course-five.html" class="rts-btn btn-primary-white with-arrow">View All Course <i
-                            class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('universities.index') }}" class="rts-btn btn-primary-white with-arrow">View All
+                        Universities <i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -410,7 +370,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="thumbnail-jointeam-one pl--70">
-                        <img src="{{ asset('images/instructor/02.png') }}" alt="join">
+                        <img width="100%" src="{{ asset('images/instructor/02.png') }}" alt="join">
                         <div class="shape-area-one shape-image">
                             <img src="{{ asset('images/instructor/shape/01.png') }}" alt="shape" data-speed="0.04"
                                 class="shape one">
@@ -429,78 +389,145 @@
                             <img src="{{ asset('images/banner/bulb.png') }}" alt="icon">
                             <span>Join Our Team</span>
                         </div>
-                        <h2 class="title">Join Us Become an Instructor <br> & Inspire Learning</h2>
-                        <p class="post-title">As an instructor with us, you'll have the opportunity to inspire, guide,
-                            and mentor our diverse community of students. Whether you're an industry expert, an academic
-                            guru, or an experienced professional</p>
+                        <h2 class="title">Join Us to Inspire & Learning <br>At Abeer Education </h2>
+
                         <div class="accordion mt--30" id="accordionExample">
 
-                            <!-- accordion -->
+                            <!-- Accordion Item 1 -->
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Accordion Item #1
+                                        # Academic Consulting
                                     </button>
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show"
                                     aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <strong>This is the first item's accordion body.</strong> It is shown by
-                                        default, until the collapse plugin adds the appropriate classes that we use
-                                        to style each element. These classes control the overall appearance,
-                                        as well as the showing and hiding via CSS transitions. You can modify any of
-                                        this with custom CSS or overriding our default variables. It's also worth
-                                        noting that just about any HTML can go within the
-                                        <code>.accordion-body</code>, though the transition does limit overflow.
+                                        <strong>Expert Advice for Your Academic Journey</strong>
+                                        <p>Our team of academic advisors will help guide you on your unique academic
+                                            journey. We can help you find courses and programs that align with your
+                                            interests, goals, and budget. Let’s start this journey together.</p>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Accordion Item 2 -->
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Accordion Item #2
+                                        # University Acceptance
                                     </button>
                                 </h2>
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong> It is hidden by
-                                        default, until the collapse plugin adds the appropriate classes that we use
-                                        to style each element. These classes control the overall appearance, as well as
-                                        the showing and hiding via CSS transitions. You can modify any of this with
-                                        custom CSS or overriding our default variables. It's also worth noting that
-                                        just about any HTML can go within the <code>.accordion-body</code>, though the
-                                        transition does limit overflow.
+                                        <strong>Easy University Acceptance Process</strong>
+                                        <p>We make applying to universities abroad easy with expert assistance. Our
+                                            streamlined process ensures students get acceptance letters quickly. We can even
+                                            secure partial scholarships for qualified candidates with our connections to
+                                            Malaysian universities.</p>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Accordion Item 3 -->
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
-                                        Accordion Item #3
+                                        # Visa Assistance
                                     </button>
                                 </h2>
                                 <div id="collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <strong>This is the third item's accordion body.</strong> It is hidden by
-                                        default, until the collapse plugin adds the appropriate classes that we use
-                                        to style each element. These classes control the overall appearance, as well as
-                                        the showing and hiding via CSS transitions. You can modify any of this with
-                                        custom CSS or overriding our default variables. It's also worth noting that
-                                        just about any HTML can go within the <code>.accordion-body</code>, though the
-                                        transition does limit overflow.
+                                        <strong>Stress-free Visa Assistance and Monitoring</strong>
+                                        <p>We’re here to help you with the visa process. We’ll handle the paperwork and keep
+                                            you updated on your application. Our aim is to make visa approval stress-free.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Accordion Item 4 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        # Warm Welcome
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Welcome to beautiful Malaysia!</strong>
+                                        <p>Upon the arrival of students in Malaysia, we extend a warm and friendly welcome.
+                                            Our team will provide airport transfers and essential support during their
+                                            initial days, ensuring a comfortable settling experience as they gear up towards
+                                            their academic pursuits.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Accordion Item 5 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFive" aria-expanded="false"
+                                        aria-controls="collapseFive">
+                                        # Seamless Registration
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Simplified University Enrollment</strong>
+                                        <p>Enrolling in a Malaysian university with us is easy and hassle-free! We’ll guide
+                                            you from registration to settling into campus life, ensuring a smooth transition
+                                            and successful academic journey.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Accordion Item 6 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        # Suitable Accommodation
+                                    </button>
+                                </h2>
+                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>Finding the Perfect Place to Stay</strong>
+                                        <p>Find a comfy place to stay while studying in Malaysia. Our team will ensure you
+                                            have a safe and convenient home on or near campus, so you can focus on your
+                                            studies stress-free.</p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <a href="become-instructor.html" class="rts-btn btn-primary with-arrow">Join Us <i
-                                class="fa-regular fa-arrow-right"></i></a>
+
+                        <a class="hosni-button">
+                            <div class="svg-wrapper-1">
+                                <div class="svg-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                        height="24">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path fill="currentColor"
+                                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <span>Learn More </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -512,7 +539,7 @@
     </div>
     <!-- join our team area end -->
     {{-- numbers --}}
-    <div class="fun-facts-area-1 shape-move bg_image ptb--50">
+    <div class="fun-facts-area-1 shape-move bg_image ptb--50 rts-section-gap">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -570,398 +597,147 @@
     <!-- fun facts area end -->
 
     <!-- rts testimonials area  -->
-    <div class="testimonials-area rts-section-gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-area-center-style">
-                        <div class="pre-title">
-                            <img src="images/banner/bulb.png" alt="icon">
-                            <span>Student Review</span>
-                        </div>
-                        <h2 class="title">Our Students Feedback</h2>
-                        <p class="post-title">You'll find something to spark your curiosity and enhance</p>
+    <div class="row mt--50 rts-section-gap">
+        <div class="col-lg-12">
+            <div class="swiper-feedback-wrapper-5">
+                <div class="swiper swiper-data"
+                    data-swiper='{
+                    "spaceBetween":30,
+                    "slidesPerView":3,
+                    "loop": true,
+                    "navigation":{
+                        "nextEl":".swiper-button-next",
+                        "prevEl":".swiper-button-prev"
+                    },
+                    "pagination":{
+                        "el":".swiper-pagination",
+                        "clickable":true
+                    },
+                    "autoplay":{
+                        "delay":2000
+                    },
+                    "breakpoints":{
+                        "320":{
+                            "slidesPerView":1,
+                            "spaceBetween":30
+                        },
+                        "480":{
+                            "slidesPerView":1,
+                            "spaceBetween":30
+                        },
+                        "640":{
+                            "slidesPerView":2,
+                            "spaceBetween":30
+                        },
+                        "940":{
+                            "slidesPerView":2,
+                            "spaceBetween":30
+                        },
+                        "1140":{
+                            "slidesPerView":3,
+                            "spaceBetween":30
+                        }
+                    }
+                }'>
+                    <div class="swiper-wrapper">
+                        @foreach ($reviews as $review)
+                            <div class="swiper-slide">
+                                <!-- single students feedback area start -->
+                                <div class="single-students-feedback-5">
+                                    <div class="stars">
+                                        @for ($i = 0; $i < 5; $i++)
+                                            @if ($i < $review->rating)
+                                                <i class="fa-solid fa-star"></i>
+                                            @else
+                                                <i class="fa-regular fa-star"></i>
+                                            @endif
+                                        @endfor
+                                    </div>
+                                    <p class="disc">
+                                        {{ $review->content }}
+                                    </p>
+                                    <div class="authore-area">
+                                        <img width="100px" src="{{ asset($review->image) }}" alt="feedback">
+                                        <div class="author">
+                                            <h6 class="title">{{ $review->author }}</h6>
+                                            <span>Student</span>
+                                        </div>
+                                    </div>
+                                    <div class="quote">
+                                        <img src="images/students-feedback/19.png" alt="feedback">
+                                    </div>
+                                </div>
+                                <!-- single students feedback area end -->
+                            </div>
+                        @endforeach
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-full mt--50">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="marque-main-wrapper-parent-flex">
-                        <div class="marquree-wrapper-1">
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/02.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Emma Elizabeth</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/03.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Jack Benjamin</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/04.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Samuel John </h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/05.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Samantha Willow</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                        </div>
-                        <div class="marquree-wrapper-1">
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/06.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Emma Elizabeth</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/07.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Emma Elizabeth</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/08.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Emma Elizabeth</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/09.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Emma Elizabeth</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                        </div>
+                    <div class="left-align-arrow-btn">
+                        <div class="swiper-button-next"><i class="fa-solid fa-chevron-right"></i></div>
+                        <div class="swiper-button-prev"><i class="fa-solid fa-chevron-left"></i></div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="marque-main-wrapper-parent-flex">
-                        <div class="marquree-wrapper-2">
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/02.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Emma Elizabeth</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/03.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Jack Benjamin</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/04.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Samuel John </h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/05.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Samantha Willow</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                        </div>
-                        <div class="marquree-wrapper-2">
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/06.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Emma Elizabeth</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/07.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Emma Elizabeth</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/08.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Emma Elizabeth</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                            <!-- single testimonials-area -->
-                            <div class="single-testimonials-area-1">
-                                <div class="stars-area">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-regular fa-star"></i>
-                                </div>
-                                <p class="disc">
-                                    I can't recommend The Gourmet Haven enough. It's a place for special occasions,
-                                    date nights, or whenever you're in the mood for a culinary.
-                                </p>
-                                <div class="feedback-author">
-                                    <img src="images/students-feedback/09.png" alt="students-feedback">
-                                    <div class="information">
-                                        <h5 class="title">Emma Elizabeth</h5>
-                                        <span>Assistant Teacher</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single testimonials-area end -->
-                        </div>
-                    </div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                 </div>
             </div>
         </div>
     </div>
-    <!-- rts testimonials area end -->
 
+
+    <!-- rts testimonials area end -->
+    <div class="rts-blog-area">
+        <div class="container pb--130">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-area-center-style">
+                        <div class="pre-title">
+                            <img src="images/banner/globe.png" alt="icon">
+                            <span>News & Article</span>
+                        </div>
+                        <h2 class="title">Read Our Latest News</h2>
+                        <p class="post-title"> Our mission is to provide you with valuable insights</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-5 mt--20">
+                @foreach ($latestBlogs as $blog)
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div style="padding:0 " class="single-blog-style-one">
+                            <a href="{{ route('post.show', $blog->slug) }}" class="thumbnail">
+                                <img src="{{ asset($blog->thumbnail_url) }}" alt="{{ $blog->title }}">
+                                <div class="tags-area">
+                                    <span>Abeer Education</span>
+                                </div>
+                            </a>
+                            <div style="    padding: 0px 20px 10px 20px;" class="post-body">
+                                <div class="blog-top-area">
+                                    <div class="single">
+                                        <i class="fa-light fa-calendar-days"></i>
+                                        <p>{{ $blog->created_at->format('F d, Y') }}</p>
+                                    </div>
+                                    <div class="single">
+                                        <i class="fa-light fa-user"></i>
+                                        <p>{{ $blog->author }}</p>
+                                    </div>
+                                </div>
+                                <a href="{{ route('post.show', $blog->slug) }}">
+                                    <h5 class="title">{{ $blog->title }}</h5>
+                                </a>
+                                <div class="button-area">
+                                    <a href="{{ route('post.show', $blog->slug) }}"
+                                        class="rts-btn btn-primary readmore-btn">Read More <i
+                                            class="fa-regular fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
     <!-- brand area start -->
-    <div class="brand-area-one pb--150">
+    <div class="brand-area-one">
         <div class="container">
-            <div class="row pb--60">
+            <div class="row ">
                 <div class="col-lg-12">
                     <div class="brand-style-one ">
                         <div class="left-title">
@@ -970,7 +746,7 @@
                         <div class="swiper mySwiper-category-1 swiper-data"
                             data-swiper='{
                             "spaceBetween":30,
-                            "slidesPerView":6,
+                            "slidesPerView":5,
                             "loop": true,
                             "speed": 1500,
                             "autoplay":{
@@ -990,7 +766,7 @@
                                 "slidesPerView":4,
                                 "spaceBetween":30},
                             "1140":{
-                                "slidesPerView":6,
+                                "slidesPerView":5,
                                 "spaceBetween":30}
                             }
                         }'>
@@ -998,42 +774,42 @@
                                 <!-- single swiper style -->
                                 <div class="swiper-slide">
                                     <div class="brand-area">
-                                        <img src="images/brand/08.svg" alt="brand">
+                                        <img src="images/1.png" alt="brand">
                                     </div>
                                 </div>
                                 <!-- single swiper style -->
                                 <!-- single swiper style -->
                                 <div class="swiper-slide">
                                     <div class="brand-area">
-                                        <img src="images/brand/09.svg" alt="brand">
+                                        <img src="images/2.png" alt="brand">
                                     </div>
                                 </div>
                                 <!-- single swiper style -->
                                 <!-- single swiper style -->
                                 <div class="swiper-slide">
                                     <div class="brand-area">
-                                        <img src="images/brand/10.svg" alt="brand">
+                                        <img src="images/3.png" alt="brand">
                                     </div>
                                 </div>
                                 <!-- single swiper style -->
                                 <!-- single swiper style -->
                                 <div class="swiper-slide">
                                     <div class="brand-area">
-                                        <img src="images/brand/11.svg" alt="brand">
+                                        <img src="images/4.png" alt="brand">
                                     </div>
                                 </div>
                                 <!-- single swiper style -->
                                 <!-- single swiper style -->
                                 <div class="swiper-slide">
                                     <div class="brand-area">
-                                        <img src="images/brand/12.svg" alt="brand">
+                                        <img src="images/5.png" alt="brand">
                                     </div>
                                 </div>
                                 <!-- single swiper style -->
                                 <!-- single swiper style -->
                                 <div class="swiper-slide">
                                     <div class="brand-area">
-                                        <img src="images/brand/13.svg" alt="brand">
+                                        <img src="images/6.png" alt="brand">
                                     </div>
                                 </div>
                                 <!-- single swiper style -->
@@ -1044,39 +820,6 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="call-to-sction bg_image shape-move">
-                    <div class="title-area-left-style">
-                        <div class="pre-title">
-                            <img src="images/banner/bulb-2.png" alt="icon">
-                            <span>Downloads App</span>
-                        </div>
-                        <h2 class="title mb--25">Build your Skills Certificate From <br> the Studyhub Online
-                            course
-                        </h2>
-                        <div class="finding-source">
-                            <a href="#">
-                                <img src="images/cta/01.svg" alt="cta-one">
-                            </a>
-                            <a href="#">
-                                <img src="images/cta/02.svg" alt="cta-one">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="image-right">
-                        <img src="images/cta/03.png" alt="cta-main">
-                    </div>
-                    <div class="banner-shape-area-two shape-image">
-                        <img src="images/cta/03.svg" data-speed="0.04" alt="one" class="shape one"
-                            style="transform: matrix(1, 0, 0, 1, 12.26, 15.78);">
-                        <img src="images/cta/05.svg" data-speed="0.04" data-revert="true" alt="two"
-                            class=" shape two" style="transform: matrix(1, 0, 0, 1, -10.26, -13.78);">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- brand area end -->
 @endsection

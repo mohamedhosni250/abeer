@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.main')
+
 
 @section('title', 'Search Results')
 
@@ -54,8 +55,7 @@
                                     <a href="{{ route('programs.apply', ['id' => $program->id]) }}" class="btn apply-btn">
                                         Apply Now
                                     </a>
-                                    <a href="" class="btn ask-btn">Ask
-                                        Us</a>
+
                                 </div>
                             </div>
                         </div>

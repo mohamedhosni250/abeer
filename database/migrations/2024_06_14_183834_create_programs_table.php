@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('fee_per_year')->nullable(); // Fee per year
             $table->string('scholarship_percentage')->nullable(); // Scholarship percentage
             $table->string('scholarship_fee_per_year')->nullable(); // Fee after scholarship per year           
-            $table->foreignId('university_id')->constrained();
+            $table->foreignId('university_id')->constrained()->onDelete('cascade');;
             $table->foreignId('degree_id')->constrained();
             $table->foreignId('department_id')->constrained();
             $table->timestamps();

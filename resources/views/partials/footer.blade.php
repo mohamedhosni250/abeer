@@ -1,5 +1,44 @@
     <!-- footer call to action area start -->
+    <svg style="height: 300px;
+}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#0b3a5b" fill-opacity="1"
+            d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+        </path>
+    </svg>
     <div class="footer-callto-action-area bg-dark-footer-1">
+        {{-- <div style="margin-top: 200px" class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="call-to-sction bg_image shape-move">
+                        <div class="title-area-left-style">
+                            <div class="pre-title">
+                                <img src="{{ asset('images/banner/bulb-2.png') }}" alt="icon">
+                                <span>Downloads App</span>
+                            </div>
+                            <h2 class="title mb--25">Build your Skills Certificate From <br> the Studyhub Online course
+                            </h2>
+                            <div class="finding-source">
+                                <a href="#">
+                                    <img src="{{ asset('images/cta/01.svg') }}" alt="cta-one">
+                                </a>
+                                <a href="#">
+                                    <img src="{{ asset('images/cta/02.svg') }}" alt="cta-one">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="image-right">
+                            <img src="images/cta/03.png" alt="cta-main">
+                        </div>
+                        <div class="banner-shape-area-two shape-image">
+                            <img src="{{ asset('images/cta/03.svg') }}" data-speed="0.04" alt="one"
+                                class="shape one" style="transform: matrix(1, 0, 0, 1, 14.94, 8.32);">
+                            <img src="{{ asset('images/cta/05.svg') }}" data-speed="0.04" data-revert="true"
+                                alt="two" class=" shape two" style="transform: matrix(1, 0, 0, 1, -12.94, -6.32);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
 
         <div class="container ptb--105">
             <div class="row">
@@ -10,13 +49,13 @@
                         <div class="footer-singl-wized left-logo">
                             <div class="head">
                                 <a href="#">
-                                    <img src="images/logo/logo-2.svg" alt="logo" loading="lazy">
+                                    <img src="{{ asset('abeer-white.png') }}" alt="logo" loading="lazy">
                                 </a>
                             </div>
                             <div class="body">
                                 <p class="dsic">
-                                    We are passionate education dedicated to providing high-quality resources
-                                    learners all backgrounds.
+                                    We are committed to expanding our global reach by partnering with renowned and
+                                    top-ranked education providers around the world.
                                 </p>
                                 <ul class="wrapper-list">
                                     <li><i class="fa-regular fa-location-dot"></i>Yarra Park, Melbourne, Australia
@@ -90,7 +129,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright-area-one">
-                            <p>Copyright © 2024 All Rights Reserved by Studyhub</p>
+                            <p>Copyright © 2024 All Rights Reserved by Abeer Education</p>
                             <div class="social-copyright">
                                 <ul>
                                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>

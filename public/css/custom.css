@@ -1,3 +1,156 @@
+/* testomonial */
+
+body {
+    scroll-behavior: smooth;
+}
+
+.join-our-team-area.v-1 .title-area-left-style .title {
+    font-weight: bold;
+    color: #002c4a;
+}
+
+.tags-area span {
+    background: #002c4a !important;
+    color: white !important;
+}
+
+.swiper-feedback-wrapper-5,
+.swiper-feedback-wrapper-5 .single-students-feedback-5,
+.swiper-feedback-wrapper-5 .single-students-feedback-5 .stars,
+.swiper-feedback-wrapper-5 .single-students-feedback-5 .disc,
+.swiper-feedback-wrapper-5 .single-students-feedback-5 .authore-area .author .title,
+.swiper-feedback-wrapper-5 .single-students-feedback-5 .authore-area .author span {
+    font-family: 'Cairo', sans-serif;
+}
+
+.accordion-item:first-of-type .accordion-button {
+    background: #0b3a5b;
+    color: white;
+}
+
+.single-students-feedback-5 p.disc {
+    color: #110C2D;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    margin-bottom: 25px;
+    min-height: 200px;
+}
+
+
+/* hosni headline  */
+
+.hosni-headline {
+    margin: 20px 0;
+}
+
+
+/* accordon css style  */
+
+.accordion-button {
+    font-size: 20px;
+}
+
+.accordion-button:not(.collapsed),
+.accordion-button:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.accordion-button::after {
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+    background-color: var(--bs-danger);
+    background-image: none !important;
+}
+
+.accordion-button.collapsed::after {
+    background-color: var(--bs-gray-300);
+}
+
+.coursearea {
+    margin-top: 20px;
+}
+
+.footer-callto-action-area.bg-dark-footer-1 {
+    background: #0b3a5b !important;
+}
+
+.brand-style-one .brand-area img {
+    max-width: 150px !important;
+    max-height: unset !important;
+}
+
+
+/* primary button  */
+
+.hosni-button {
+    user-select: none;
+    margin: 50px auto;
+    width: 200px;
+    font-family: inherit;
+    font-size: 18px;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 13px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.hosni-button:hover {
+    user-select: none;
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.hosni-button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.hosni-button span {
+    display: block;
+    margin-left: 0.4em;
+    transition: all 0.3s;
+}
+
+.hosni-button svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+    transition: all 0.3s;
+}
+
+.hosni-button .svg-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 0.5em;
+    transition: all 0.3s;
+}
+
+.hosni-button:hover svg {
+    transform: rotate(45deg);
+}
+
+
+/* primary button  */
+
 @media only screen and (max-width: 600px) {
     .category-search-input {
         display: flex;
@@ -13,7 +166,7 @@
     text-align: left;
     font-weight: bold;
     font-family: 'Montserrat';
-    color: #0b3a5b;
+    color: #0b3a5b
 }
 
 .support-text {
@@ -37,6 +190,199 @@
     background-color: #00c3fe;
     margin: 2px
 }
+
+
+/* blog */
+
+.single-blog-style-one {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.single-blog-style-one:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.post-body {
+    padding: 20px;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* university signle page  */
+
+.university-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.university-card .thumbnail img {
+    width: 100%;
+    height: 400px;
+    display: block;
+}
+
+.university-card .university-content {
+    padding: 20px;
+    position: relative;
+    background: #fff;
+    text-align: center;
+}
+
+.university-card .university-logo {
+    padding: 3px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-details-btn-wrapper ul li button.nav-link {
+    color: #0b3a5b;
+}
+
+.university-card .university-logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.banner-tags-wrapper .single-tags-banner p {
+    margin: 0;
+    padding: 6px 10px;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.university-card .university-title {
+    margin-top: 30px;
+    font-weight: bold;
+    color: #0b3a5b;
+}
+
+.course__text {
+    padding: 30px 0;
+}
+
+.accordion-button:not(.collapsed) {
+    font-weight: bold;
+    color: #0b3a5b;
+    background-color: #e7f1ff;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+}
+
+.university-card .university-location {
+    color: #0b3a5b;
+    font-weight: bold;
+}
+
+.university-stats-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item i {
+    font-size: 30px;
+    color: var(--color-primary);
+    ;
+}
+
+.stat-item span {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.stat-item p {
+    font-size: 14px;
+    color: #737373;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.separator hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 0 10px;
+}
+
+.separator i {
+    color: #737373;
+}
+
+.starting-fee {
+    font-size: 16px;
+    color: #737373;
+    margin-bottom: 20px;
+}
+
+.starting-fee span {
+    color: #00b6ed;
+    font-weight: bold;
+}
+
+.apply-btn {
+    background-color: #00b6ed;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.apply-btn:hover {
+    background-color: #009dc4;
+}
+
+
+/* end univerity single page cards */
 
 
 /* univeresities wrapper card  */
@@ -79,10 +425,25 @@
 }
 
 .single-price {
-    background: #00C3FE;
+    background: #0b3a5b;
     color: white;
     padding: 10px;
     border-radius: 6px;
+}
+
+.nav-link.active {
+    border-radius: 4px;
+    padding: 4px 20px;
+    color: white !important;
+    background: #0b3a5b;
+}
+
+a:active {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #002c4a !important;
 }
 
 .card-title {
@@ -99,20 +460,12 @@
     border-radius: 8px;
 }
 
-.custom-form .btn-search {
-    background-color: #00B6ED;
-    color: white;
-    height: calc(2.75rem + 10px);
-    /* Match the height of the button with the input fields */
-    font-size: 1.25rem;
-    /* Increase the font size of the button */
-}
-
 .custom-form .form-control {
     height: calc(2.75rem + 10px);
-    font-size: 16px;
+    font-size: 14px;
     padding-left: 2.5rem;
     font-weight: 500;
+    margin-left: 3px;
 }
 
 .form-row {
@@ -134,7 +487,6 @@
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    font-size: 1.80rem;
     color: #6c757d;
 }
 
@@ -147,11 +499,6 @@
 
 .course-details-btn-wrapper.full-width ul {
     justify-content: unset !important;
-}
-
-.single-university-page .coursearea {
-    padding-top: 100px;
-    padding-bottom: 100px;
 }
 
 .single-university-page .info-card {
@@ -243,7 +590,7 @@
 
 .program-card {
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 30px;
     background-color: #fff;
     margin-top: 20px;
@@ -261,6 +608,7 @@
 .program-card .program-title {
     font-weight: bold;
     margin-top: 10px;
+    color: #002c4a;
     margin-bottom: 20px;
 }
 
@@ -277,6 +625,8 @@
 .program-card .info-container div span {
     display: block;
     font-weight: bold;
+    font-size: 17px;
+    color: #0b3a5b;
 }
 
 .program-card .info-container div small {
@@ -315,7 +665,7 @@
 }
 
 .program-card .apply-btn {
-    background-color: #00B6ED;
+    background-color: #0b3a5b;
     color: #fff;
 }
 
@@ -345,4 +695,36 @@
     .program-card .buttons-container .btn {
         margin-bottom: 10px;
     }
+}
+
+
+/* applyform  */
+
+.applyform {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.applyform .form-group {
+    margin-bottom: 15px;
+}
+
+.applyform .form-control {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+}
+
+.applyform .form-control:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+}
+
+.applyform .form-group label {
+    font-weight: bold;
 }

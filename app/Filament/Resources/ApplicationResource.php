@@ -2,22 +2,20 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Exports\ApplicationExporter;
 use App\Filament\Resources\ApplicationResource\Pages;
-use App\Filament\Resources\ApplicationResource\RelationManagers;
 use App\Models\Application;
-use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Contracts\Cache\Store;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+
 use Illuminate\Support\Facades\Storage;
 
 class ApplicationResource extends Resource
@@ -65,6 +63,10 @@ class ApplicationResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+
+            ])->headerActions([
+                Tables\Actions\ExportAction::make()
+                    ->exporter(ApplicationExporter::class)
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),

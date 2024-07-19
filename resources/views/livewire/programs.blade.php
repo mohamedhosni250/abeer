@@ -1,7 +1,7 @@
 <div>
     <div class="row">
         @foreach ($programs as $program)
-            <div class="col-md-6 mb-4">
+            <div style="margin-top: 40px" class="col-md-6 mb-4">
                 <div class="program-card">
                     <h3 class="program-title">{{ $program->name }}</h3>
                     <div class="info-container">
@@ -39,8 +39,7 @@
                         <a href="{{ route('programs.apply', ['id' => $program->id]) }}" class="btn apply-btn">
                             Apply Now
                         </a>
-                        <a href="" class="btn ask-btn">Ask
-                            Us</a>
+
                     </div>
                 </div>
             </div>

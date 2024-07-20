@@ -9,8 +9,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
-        return view('blog.index', compact('posts'));
+        $posts = Post::paginate(6);
+        return view('pages.blog', compact('posts'));
     }
 
     public function show($slug)

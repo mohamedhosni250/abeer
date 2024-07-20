@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\CourseVideo;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -35,9 +37,13 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Course $course)
+    public function show($slug, $video_id = null)
     {
-        //
+        $course = Course::where('slug', $slug)->firstOrFail();
+        $videos = $course->videos;
+        $selectedVideo = $video_id ? CourseVideo::findOrFail($video_id) : $videos->first();
+
+        return view('pages.course_single_page', compact('course', 'videos', 'selectedVideo'));
     }
 
     /**

@@ -16,6 +16,7 @@ class Application extends Model
         'email',
         'phone_number',
         'attachment',
+        'passport',
     ];
     public function university()
     {

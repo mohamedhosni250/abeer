@@ -3,7 +3,13 @@
 
 @section('content')
     <!-- about area start -->
-    <div style="padding-top:50px ; padding-bottom:50px" class="about-area-start ">
+    <div style="" class="container text-center mt-5">
+        <h2 class="headline">
+            <span class="support-text"> </span><br>About <span class="highlight">Abeer Education</span>
+        </h2>
+        <div class="line"></div>
+    </div>
+    <div style=" padding-bottom:50px" class="about-area-start ">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-12">

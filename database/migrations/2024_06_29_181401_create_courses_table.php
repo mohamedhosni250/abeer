@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('course_category_id')->constrained();
             $table->string('title');
+            $table->string('slug')->unique();
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->string('hours')->nullable();

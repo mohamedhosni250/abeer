@@ -54,6 +54,11 @@
                                                 href="{{ route('leads') }}">Registration
                                             </a>
                                         </li>
+                                        <li style="position: static;">
+                                            <a class="nav-link {{ isActive('blog*') }}"
+                                                href="{{ route('posts') }}">Blog
+                                            </a>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>

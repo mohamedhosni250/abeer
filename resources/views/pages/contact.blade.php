@@ -1,11 +1,13 @@
 @extends('layouts.main')
 
-@section('content')
-    @php
-        $breadcrumbs = [['name' => 'Contact Us', 'url' => route('contact')]];
-    @endphp
 
 @section('content')
+    <div class="container text-center mt-5">
+        <h2 class="headline">
+            <span class="support-text"> </span><br>Contact <span class="highlight">Us</span>
+        </h2>
+        <div class="line"></div>
+    </div>
     <div class="rts-contact-area rts-section-gapTop">
         <div class="container">
             <div class="row">
@@ -109,12 +111,13 @@
                             <form action="mailer.php" method="post" class="contact-page-form" id="contact-form">
                                 <div class="single-input">
                                     <label for="name">Your Name*</label>
-                                    <input id="name" name="name" type="text" placeholder="Andrew Davis ...."
+                                    <input id="name" name="name" type="text" placeholder="Your Name ...."
                                         required="">
                                 </div>
                                 <div class="single-input">
                                     <label for="email">Your Email*</label>
-                                    <input id="email" name="email" type="email" placeholder="info@studyhub.net">
+                                    <input id="email" name="email" type="email"
+                                        placeholder="info@abeereducation.com">
                                 </div>
                                 <div class="single-input">
                                     <label for="message">Message*</label>

@@ -12,6 +12,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Actions\ExportAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -46,6 +47,8 @@ class LeadResource extends Resource
                 Tables\Columns\TextColumn::make('email'),
                 Tables\Columns\TextColumn::make('mobile_number'),
                 Tables\Columns\TextColumn::make('attachment'),
+                ImageColumn::make('attachment'),
+                Tables\Columns\TextColumn::make('passport'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime(),
             ])->headerActions([

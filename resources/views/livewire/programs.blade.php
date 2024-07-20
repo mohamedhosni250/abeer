@@ -5,21 +5,25 @@
                 <div class="program-card">
                     <h3 class="program-title">{{ $program->name }}</h3>
                     <div class="info-container">
-                        <div>
-                            <span>{{ $program->fee_per_year }}$</span>
-                            <small>Per Year</small>
-                        </div>
-                        <div>
-                            <span>+{{ $program->duration }} Year</span>
-                            <small>Duration</small>
-                        </div>
-                        <div>
-                            <span>{{ $program->study_mode }}</span>
-                            <small>Study Mode</small>
-                        </div>
-                        <div>
-                            <span>{{ $program->intake }}</span>
-                            <small>Intake</small>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6 col-md-3 text-center">
+                                    <span>{{ $program->fee_per_year }}$</span>
+                                    <small>Per Year</small>
+                                </div>
+                                <div class="col-6 col-md-3 text-center">
+                                    <span>+{{ $program->duration }} Year</span>
+                                    <small>Duration</small>
+                                </div>
+                                <div class="col-6 col-md-3 text-center">
+                                    <span>{{ $program->study_mode }}</span>
+                                    <small>Study Mode</small>
+                                </div>
+                                <div class="col-6 col-md-3 text-center">
+                                    <span>{{ $program->intake }}</span>
+                                    <small>Intake</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="scholarship-container">

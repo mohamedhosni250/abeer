@@ -16,8 +16,12 @@
 
                         <div class="blog__details__content__wraper">
 
-                            <div class="course__details__heading" data-aos="fade-up">
-                                <h3>Universities</h3>
+                            <div class="container text-center mt-5">
+                                <h2 class="headline">
+                                    <span class="support-text"> </span><br> Our <span class="highlight">Universities
+                                    </span>
+                                </h2>
+                                <div class="line"></div>
                             </div>
                             <livewire:universities />
                         </div>

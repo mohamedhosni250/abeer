@@ -10,7 +10,8 @@
     <p><strong>Name:</strong> {{ $data['name'] }}</p>
     <p><strong>Email:</strong> {{ $data['email'] }}</p>
     <p><strong>Phone Number:</strong> {{ $data['phone_number'] }}</p>
-    <p><strong>Profile Picture:</strong> <a href="{{ $data['attachment'] }}">View</a></p>
+    <p><strong>Certificate:</strong> <a href="{{ $data['attachment'] }}">View</a></p>
+    <p><strong>Passport:</strong> <a href="{{ $data['passport'] }}">View</a></p>
 
 </body>
 

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Mail;
 class ApplicationController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display the application form.
      */
     public function showApplyForm($programId)
     {
@@ -19,38 +19,46 @@ class ApplicationController extends Controller
         return view('pages.apply_form', compact('program'));
     }
 
+    /**
+     * Submit the application form.
+     */
     public function submitApplication(Request $request)
     {
         $request->validate([
-            'university_id' => 'required',
-            'program_id' => 'required',
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone_number' => 'required',
-            'attachment' => 'required|file',
+            'university_id' => 'required|integer|exists:universities,id',
+            'program_id' => 'required|integer|exists:programs,id',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone_number' => 'required|string|max:20',
+            'attachment' => 'required|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:2048',
+            'passport' => 'required|file|mimes:pdf,doc,docx,jpg,jpeg,png|max:2048',
         ]);
 
-        // Save the uploaded file
-        $path = $request->file('attachment')->store('attachments');
+        try {
+            // Save the uploaded files
+            $path = $request->file('attachment')->store('attachments');
+            $passport_path = $request->file('passport')->store('passports');
 
-        // Create a new application record
-        $application = Application::create([
-            'university_id' => $request->university_id,
-            'program_id' => $request->program_id,
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone_number' => $request->phone_number,
-            'attachment' => $path,
-        ]);
+            // Create a new application record
+            $application = Application::create([
+                'university_id' => $request->university_id,
+                'program_id' => $request->program_id,
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone_number' => $request->phone_number,
+                'attachment' => $path,
+                'passport' => $passport_path,
+            ]);
 
+            // Prepare data for email
+            $data = $application->toArray();
 
-        // Prepare data for email
-        $data = $application->toArray();
+            // Queue the email
+            Mail::to('hello@mohamedhosny.com')->queue(new ApplicationSubmitted($data));
 
-        // Queue the email
-        Mail::to('hello@mohamedhosny.com')->queue(new ApplicationSubmitted($data));
-
-        // Return JSON response
-        return response()->json(['success' => true, 'data' => $data]);
+            return redirect()->back()->with('success', 'Application submitted successfully!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to submit application. Please try again.');
+        }
     }
 }

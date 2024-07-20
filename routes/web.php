@@ -38,10 +38,20 @@ Route::post('leads/store', [LeadController::class, 'store'])->name('leads.store'
 
 // Blog post routes
 Route::get('post/{slug}', [PostController::class, 'show'])->name('post.show');
+Route::get('/blog', [PostController::class, 'index'])->name('posts');
 
 //courses 
 Route::get('courses', [CourseController::class, 'index'])->name('courses');
-// Route::get('courses/{slug}', [CourseController::class, 'show'])->name('course.show');
+// Route that requires authentication
+Route::get('course/{slug}', [CourseController::class, 'show'])
+    ->middleware('auth')
+    ->name('course.show');
+
+// Route to handle redirection if not authenticated
+Route::get('register', function () {
+    return view('auth.register');
+})->name('register');
+
 // Static pages
 Route::get('/about', function () {
     $reviews = Review::all();
@@ -59,6 +69,7 @@ Route::get('/dashboard', function () {
 
 // Profile routes
 Route::middleware('auth')->group(function () {
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

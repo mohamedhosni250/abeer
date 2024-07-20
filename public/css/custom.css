@@ -610,6 +610,7 @@ a:active {
     margin-top: 10px;
     color: #002c4a;
     margin-bottom: 20px;
+    min-height: 110px;
 }
 
 .program-card .info-container {

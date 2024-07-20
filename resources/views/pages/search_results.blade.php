@@ -5,7 +5,12 @@
 
 @section('content')
     <div class="container py-5">
-        <h2 class="mb-4">Best Universities For <span style="color: #007bff;">You</span></h2>
+        <div class="container text-center mt-5">
+            <h2 class="headline">
+                <span class="support-text"> </span><br> Best Universities For <span class="highlight">You</span>
+            </h2>
+            <div class="line"></div>
+        </div>
         @forelse ($programs as $university => $universityPrograms)
             <div class="mb-5">
                 <div class=" d-flex align-items-center mb-3">

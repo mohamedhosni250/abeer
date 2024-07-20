@@ -35,7 +35,7 @@
                         <h3 class="title animated fadeIn">{{ $post->title }}</h3>
 
                         <div class="disc">
-                            {{ $post->content }}
+                            {!! $post->content !!}
                         </div>
                         <div class="row  align-items-center">
                             <div class="col-lg-6 col-md-12">

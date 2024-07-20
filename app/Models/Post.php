@@ -16,6 +16,10 @@ class Post extends Model
         'thumbnail',
         'content',
     ];
+    public function getThumbnailUrlAttribute()
+    {
+        return Storage::url($this->attributes['thumbnail']);
+    }
     public static function boot()
     {
         parent::boot();
@@ -29,9 +33,5 @@ class Post extends Model
                 $post->slug = Str::slug($post->title);
             }
         });
-    }
-    public function getThumbnailUrlAttribute()
-    {
-        return Storage::url($this->attributes['thumbnail']);
     }
 }

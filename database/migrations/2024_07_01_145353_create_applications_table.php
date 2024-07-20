@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone_number');
             $table->string('attachment')->nullable();
+            $table->string('passport')->nullable();
             $table->timestamps();
         });
     }

@@ -42,6 +42,7 @@ class ApplicationResource extends Resource
                 TextInput::make('phone_number')
                     ->required(),
                 FileUpload::make('attachment'),
+                FileUpload::make('passport'),
 
             ]);
     }
@@ -51,12 +52,13 @@ class ApplicationResource extends Resource
 
         return $table
             ->columns([
-                TextColumn::make('university.name')->label('University')->sortable()->searchable(),
-                TextColumn::make('program.name')->label('Program')->sortable()->searchable(),
                 TextColumn::make('name')->sortable()->searchable(),
                 TextColumn::make('email')->sortable()->searchable(),
                 TextColumn::make('phone_number')->sortable()->searchable(),
-                ImageColumn::make('attachment')->label('Attachment')->url(fn ($record) => Storage::url($record->attachment)),
+
+                TextColumn::make('university.name')->label('University')->sortable()->searchable(),
+                TextColumn::make('program.name')->label('Program')->sortable()->searchable(),
+
             ])
             ->filters([
                 //

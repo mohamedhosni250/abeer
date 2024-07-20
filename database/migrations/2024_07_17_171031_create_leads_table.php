@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('mobile_number');
             $table->string('attachment');
+            $table->string('passport');
             $table->timestamps();
         });
     }

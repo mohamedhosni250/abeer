@@ -1,1 +1,1 @@
-<h1 style="color:white ; font-weight:bold"> Abeer Education </h1>
+<img width="150px" src="abeer-white.png" alt="">

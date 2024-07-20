@@ -36,7 +36,9 @@ class ApplicationSubmitted extends Mailable implements ShouldQueue
             ->with('data', $this->data);
 
         // Attach the files
+
         $email->attachFromStorage($this->data['attachment']);
+        $email->attachFromStorage($this->data['passport']);
 
 
         return $email;

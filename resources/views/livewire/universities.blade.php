@@ -34,7 +34,8 @@
                             </p>
                             <div style="justify-content: flex-end;" class="tags-area-wrapper">
                                 <div class="single-price">
-                                    <span>Read More </span>
+                                    <a href="{{ route('university.show', $university->slug) }}"> <span> Choose Program
+                                        </span></a>
                                 </div>
                             </div>
                         </div>

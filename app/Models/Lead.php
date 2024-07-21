@@ -13,5 +13,6 @@ class Lead extends Model
         'email',
         'mobile_number',
         'attachment',
+        'passport',
     ];
 }

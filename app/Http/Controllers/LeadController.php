@@ -39,7 +39,7 @@ class LeadController extends Controller
         } catch (\Exception $e) {
             Log::error('Failed to create lead: ' . $e->getMessage());
 
-            return redirect()->back()->with('error', 'Failed to create lead. Please try again.')
+            return redirect()->back()->with('error', 'Failed to create lead: ' . $e->getMessage())
                 ->withInput();
         }
     }

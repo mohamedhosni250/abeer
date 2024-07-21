@@ -224,10 +224,13 @@
                                         <p style="font-size: 18px; font-weight:bold">Start From <span
                                                 style="color: #0B3A5B; font-weight: bold;">${{ $university->starting_fee }}</span>
                                             per year </p>
+
+
                                         <div style="justify-content: flex-end;" class="tags-area-wrapper">
                                             <div class="single-price">
-                                                <a href="{{ route('university.show', $university->slug) }}"> <span>Read
-                                                        More </span></a>
+                                                <a href="{{ route('university.show', $university->slug) }}"> <span> Choose
+                                                        Program
+                                                    </span></a>
                                             </div>
                                         </div>
                                     </div>

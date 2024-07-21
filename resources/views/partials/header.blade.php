@@ -9,7 +9,7 @@
                             <div class="left-information">
                                 <a href="mailto:info@abeereducation.com" class="email"><i
                                         class="fa-light fa-envelope"></i>info@abeereducation.com</a>
-                                <a href="tel:+4733378901" class="email"><i
+                                <a href="tel:+201025492088" class="email"><i
                                         class="fa-light fa-phone"></i>+201025492088</a>
                             </div>
                         </div>

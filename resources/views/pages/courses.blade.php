@@ -40,16 +40,15 @@
                                                         <div class="lesson-studente">
                                                             <div class="lesson">
                                                                 <i class="fa-light fa-calendar-lines-pen"></i>
-                                                                <span>25 Lessons</span>
+                                                                <span>{{ $course->hours }} Hours</span>
                                                             </div>
                                                             <div class="lesson">
                                                                 <i class="fa-light fa-user-group"></i>
-                                                                <span>54 Students</span>
+                                                                <span>{{ $course->student_number }} Students</span>
                                                             </div>
                                                         </div>
                                                         <a href="single-course.html">
-                                                            <h5 class="title">The Complete Web Developer in
-                                                                2023: Zero to Mastery</h5>
+                                                            <h5 class="title">{{ $course->title }}</h5>
                                                         </a>
 
                                                     </div>

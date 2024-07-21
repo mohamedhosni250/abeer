@@ -58,7 +58,7 @@ class ApplicationController extends Controller
 
             return redirect()->back()->with('success', 'Application submitted successfully!');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to submit application. Please try again.');
+            return redirect()->back()->with('error', 'Failed to submit application: ' . $e->getMessage());
         }
     }
 }

@@ -12,7 +12,7 @@
             <div class="line"></div>
         </div>
         @forelse ($programs as $university => $universityPrograms)
-            <div class="mb-5">
+            <div style="margin-top: 50px" class="mb-5">
                 <div class=" d-flex align-items-center mb-3">
                     <div style="position: unset ; margin:10px ; width:120px " class="avatar-wrapper"><img
                             src="{{ $universityPrograms->first()->university->logo_url }}" alt="{{ $university }}"
@@ -20,7 +20,7 @@
 
                     <h3>{{ $university }}</h3>
                 </div>
-                <div class="row">
+                <div style="margin-top: 50px" class="row">
                     @foreach ($universityPrograms as $program)
                         <div class="col-md-6 mb-4">
                             <div class="program-card">

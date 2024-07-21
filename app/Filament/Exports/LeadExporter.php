@@ -23,6 +23,9 @@ class LeadExporter extends Exporter
             ExportColumn::make('attachment')->formatStateUsing(function ($state) {
                 return $state ? Storage::url($state) : null;
             }),
+            ExportColumn::make('passport')->formatStateUsing(function ($state) {
+                return $state ? Storage::url($state) : null;
+            }),
             ExportColumn::make('created_at'),
             ExportColumn::make('updated_at'),
         ];

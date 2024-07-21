@@ -13,6 +13,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Actions\ExportAction;
 use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -36,6 +37,9 @@ class LeadResource extends Resource
                 Forms\Components\FileUpload::make('attachment')->downloadable()
                     ->required()
                     ->directory('attachments'),
+                Forms\Components\FileUpload::make('passport')->downloadable()
+                    ->required()
+                    ->directory('attachments'),
             ]);
     }
 
@@ -43,14 +47,14 @@ class LeadResource extends Resource
     {
         return $table
             ->columns([
+
+                TextColumn::make('created_at')
+                    ->dateTime('F j, Y'),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('email'),
                 Tables\Columns\TextColumn::make('mobile_number'),
-                Tables\Columns\TextColumn::make('attachment'),
-                ImageColumn::make('attachment'),
-                Tables\Columns\TextColumn::make('passport'),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime(),
+
+
             ])->headerActions([
                 ExportAction::make()->exporter(LeadExporter::class)
             ])

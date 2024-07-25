@@ -150,6 +150,27 @@
     }
     /* primary button  */
     
+    @media only screen and (max-width:600px) {
+        .avatar-wrapper {
+            position: absolute;
+            top: 28% !important;
+            right: 5%;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+    }
+    
+    @media only screen and (min-width: 600px) {
+        .login-registration-wrapper {
+            margin-top: 100px;
+        }
+        .login-registration-wrapper::before {
+            background: white !important;
+        }
+    }
+    
     @media only screen and (max-width: 600px) {
         .category-search-input {
             display: flex;
@@ -387,6 +408,16 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 10px;
     }
+    /* .program-card .info-container {
+        background: #0b3a5b;
+        padding: 15px 30px;
+        border-radius: 10px;
+    }
+    
+    .program-card .info-container span,
+    .program-card .info-container small {
+        color: white !important;
+    } */
     
     .teacher-avatar {
         width: 80px;
@@ -404,7 +435,7 @@
     
     .University-bottom {
         padding: 24px;
-        min-height: 340px;
+        min-height: 320px;
     }
     
     .University-bottom h5 {
@@ -574,10 +605,16 @@
     }
     /* Program search page css  */
     
+    .program-price {
+        background: #00b6ed;
+        border-radius: 6px;
+        color: white !important;
+    }
+    
     .program-card {
         border-radius: 8px;
         box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 30px;
+        padding: 5px 30px 15px 30px;
         background-color: #fff;
         margin-top: 20px;
     }
@@ -596,7 +633,11 @@
         margin-top: 10px;
         color: #002c4a;
         margin-bottom: 20px;
-        min-height: 110px;
+        /* min-height: 106px; */
+    }
+    
+    .program-card .program-title {
+        font-size: 22px;
     }
     
     .program-card .info-container {
@@ -657,12 +698,12 @@
     }
     
     .program-card .apply-btn:hover {
-        background-color: #007bff;
+        background-color: #00b6ed;
         color: #fff;
     }
     
     .program-card .ask-btn {
-        border: 1px solid #00B6ED;
+        border: 1px solid #00b6ed;
         color: #00B6ED;
     }
     

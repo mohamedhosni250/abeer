@@ -221,7 +221,8 @@
                                                 <span>{{ $university->rating }} Students</span>
                                             </div>
                                         </div>
-                                        <p style="font-size: 18px; font-weight:bold">Start From <span
+                                        <p style="font-size: 18px; font-weight:bold ; margin-bottom:0px">Start
+                                            From <span
                                                 style="color: #0B3A5B; font-weight: bold;">${{ $university->starting_fee }}</span>
                                             per year </p>
 

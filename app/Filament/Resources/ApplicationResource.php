@@ -59,7 +59,7 @@ class ApplicationResource extends Resource
                 TextColumn::make('university.name')->label('University')->sortable()->searchable(),
                 TextColumn::make('program.name')->label('Program')->sortable()->searchable(),
 
-            ])
+            ])->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ])

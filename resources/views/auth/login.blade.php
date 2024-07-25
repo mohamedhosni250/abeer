@@ -1,57 +1,49 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox"
-                    class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
-                    name="remember">
-                <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
-                    href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-
-        </div>
-
-    </form>
-    <div class="flex items-center justify-center mt-4">
-
-        <a href="{{ route('register') }}" class="underline text-sm text-white  hover:text-white-900">
-            {{ __('Don\'t have an account? Register here') }}
-        </a>
+@extends('layouts.main')
+@section('content')
+    <div class="header-transparent">
+        <!-- Add your header content here -->
     </div>
-</x-guest-layout>
+
+    <div class="login-registration-wrapper">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-lg-6">
+                    <div class="login-page-form-area">
+                        <h4 class="title">Login to Your Account👋</h4>
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <div class="single-input-wrapper">
+                                <label for="email">Your Email</label>
+                                <input id="email" type="email" name="email" value="{{ old('email') }}" required
+                                    autofocus>
+                                @error('email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="single-input-wrapper">
+                                <label for="password">Your Password</label>
+                                <input id="password" type="password" name="password" required>
+                                @error('password')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="single-checkbox-filter">
+                                <div class="check-box">
+                                    <input type="checkbox" id="remember" name="remember">
+                                    <label for="remember">Remember Me</label>
+                                </div>
+                            </div>
+                            <button class="rts-btn btn-primary">Login</button>
+                            <p>Don't Have an account? <a href="{{ route('register') }}">Registration</a></p>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-thumbnail-login-p mt--100">
+                        <img src="images/banner/login-bg.png" width="600" height="495" alt="login-form">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

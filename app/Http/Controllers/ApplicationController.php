@@ -54,7 +54,7 @@ class ApplicationController extends Controller
             $data = $application->toArray();
 
             // Queue the email
-            Mail::to('hello@mohamedhosny.com')->queue(new ApplicationSubmitted($data));
+            // Mail::to('hello@mohamedhosny.com')->queue(new ApplicationSubmitted($data));
 
             return redirect()->back()->with('success', 'Application submitted successfully!');
         } catch (\Exception $e) {

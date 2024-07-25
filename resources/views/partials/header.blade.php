@@ -37,9 +37,19 @@
                                                 href="{{ route('universities.index') }}">Universities In Malaysia</a>
                                         </li>
                                         <li style="position: static;">
+                                            <a class="nav-link {{ isActive('leads*') }}"
+                                                href="{{ route('leads') }}">Registration
+                                            </a>
+                                        </li>
+                                        <li style="position: static;">
                                             <a class="nav-link {{ isActive('courses*') }}"
                                                 href="{{ route('courses') }}">
                                                 Courses</a>
+                                        </li>
+                                        <li style="position: static;">
+                                            <a class="nav-link {{ isActive('blog*') }}"
+                                                href="{{ route('posts') }}">Blog
+                                            </a>
                                         </li>
                                         <li style="position: static;">
                                             <a class="nav-link {{ isActive('about*') }}"
@@ -49,16 +59,8 @@
                                             <a class="nav-link {{ isActive('contact*') }}"
                                                 href="{{ route('contact') }}">Contact us</a>
                                         </li>
-                                        <li style="position: static;">
-                                            <a class="nav-link {{ isActive('leads*') }}"
-                                                href="{{ route('leads') }}">Registration
-                                            </a>
-                                        </li>
-                                        <li style="position: static;">
-                                            <a class="nav-link {{ isActive('blog*') }}"
-                                                href="{{ route('posts') }}">Blog
-                                            </a>
-                                        </li>
+
+
                                     </ul>
                                 </nav>
                             </div>

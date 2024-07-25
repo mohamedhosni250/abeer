@@ -57,7 +57,7 @@ class LeadResource extends Resource
 
             ])->headerActions([
                 ExportAction::make()->exporter(LeadExporter::class)
-            ])
+            ])->defaultSort('created_at', 'desc')
             ->filters([
                 //
             ]);

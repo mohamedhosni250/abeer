@@ -94,7 +94,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var input = document.querySelector("#applicantPhoneNumber");
-            window.intlTelInput(input, {
+            var iti = window.intlTelInput(input, {
                 initialCountry: "auto",
                 geoIpLookup: function(callback) {
                     fetch('https://ipinfo.io/json', {
@@ -112,6 +112,16 @@
                 },
                 utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
             });
+
+            function updatePhoneNumber() {
+                var fullNumber = iti.getNumber();
+                input.value = fullNumber;
+            }
+
+            input.addEventListener("countrychange", updatePhoneNumber);
+            input.addEventListener("blur", updatePhoneNumber);
+
+            updatePhoneNumber();
         });
     </script>
 @endsection

@@ -63,7 +63,10 @@
 
         <div class="container">
             {{-- univeristy details  --}}
-            <div class="container p-4">
+            <div style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px; "
+                class="container p-4 ">
                 <div class="container text-center mt-5 mb-10 hosni-headline">
                     <h2 class="headline">
                         <span class="support-text"> </span><br> Details About <span
@@ -120,7 +123,7 @@
                 </ul>
             </div>
             <div class="tab-content mt--50" id="myTabContent">
-                <div class="tab-pane fade  show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="tab-content tab__content__wrapper" id="myTabContent">
                         @foreach ($degrees as $degreeId => $programs)
                             <div class="tab-pane fade @if ($loop->first) show active @endif"
@@ -134,7 +137,6 @@
                     <div class="course-content-wrapper-main">
                         <h5 class="title">Course Content</h5>
                     </div>
-
                 </div>
             </div>
 

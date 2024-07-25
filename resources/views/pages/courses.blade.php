@@ -28,7 +28,7 @@
                                                 <!-- rts single course -->
                                                 <div class="rts-single-course">
                                                     <a href="{{ route('course.show', $course->slug) }}" class="thumbnail">
-                                                        <img src="images/course/01.jpg" alt="course">
+                                                        <img src="{{ $course->featured_image_url }}" alt="course">
                                                     </a>
 
                                                     <div style="padding: 20px ;min-height:250px">

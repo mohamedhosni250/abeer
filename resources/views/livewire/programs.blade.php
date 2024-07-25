@@ -8,7 +8,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-6 col-md-3 text-center">
-                                    <span>{{ $program->fee_per_year }}$</span>
+                                    <span class="program-price">{{ $program->fee_per_year }}$</span>
                                     <small>Per Year</small>
                                 </div>
                                 <div class="col-6 col-md-3 text-center">

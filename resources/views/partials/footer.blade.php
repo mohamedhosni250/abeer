@@ -58,10 +58,10 @@
                                     top-ranked education providers around the world.
                                 </p>
                                 <ul class="wrapper-list">
-                                    <li><i class="fa-regular fa-location-dot"></i>Yarra Park, Melbourne, Australia
-                                    </li>
-                                    <li><a href="call-to_61485826710.html"><i class="fa-regular fa-phone"></i>+(61)
-                                            485-826-710</a></li>
+
+
+                                    <a style="color: white" href="tel:+201025492088" class="phone"><i
+                                            class="fa-light fa-phone"></i>+201025492088</a>
                                 </ul>
                             </div>
                         </div>
@@ -146,7 +146,87 @@
         </div>
     </div>
     <!-- footer call to action area end -->
+    <div id="side-bar" class="side-bar header-two">
+        <button class="close-icon-menu"><i class="far fa-times"></i></button>
+        <!-- inner menu area desktop start -->
+        <div class="inner-main-wrapper-desk">
+            <div class="thumbnail">
+                <img src="assets/images/banner/04.jpg" alt="elevate">
+            </div>
+            <div class="inner-content">
+                <h4 class="title">We Build Building and Great Constructive Homes.</h4>
+                <p class="disc">
+                    We successfully cope with tasks of varying complexity, provide long-term guarantees and regularly
+                    master new technologies.
+                </p>
+                <div class="footer">
+                    <h4 class="title">Got a project in mind?</h4>
+                    <a href="contact.html" class="rts-btn btn-primary">Let's talk</a>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu area start -->
+        <div class="mobile-menu-main">
+            <div class="mobile-menu-main">
+                <nav class="nav-main mainmenu-nav mt--30">
+                    <ul class="mainmenu metismenu" id="mobile-menu-active">
+                        <li>
+                            <a class="main {{ isActive('/') }}" href="{{ url('/') }}">Home</a>
+                        </li>
+                        <li>
+                            <a class="main {{ isActive('universities*') }}"
+                                href="{{ route('universities.index') }}">Universities In Malaysia</a>
+                        </li>
+                        <li>
+                            <a class="main {{ isActive('courses*') }}" href="{{ route('courses') }}">Courses</a>
+                        </li>
+                        <li>
+                            <a class="main {{ isActive('about*') }}" href="{{ route('about') }}">About Us</a>
+                        </li>
+                        <li>
+                            <a class="main {{ isActive('contact*') }}" href="{{ route('contact') }}">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="main {{ isActive('leads*') }}" href="{{ route('leads') }}">Registration</a>
+                        </li>
+                        <li>
+                            <a class="main {{ isActive('blog*') }}" href="{{ route('posts') }}">Blog</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
 
+            <div class="buttons-area">
+                <a href="{{ route('login') }}" class="rts-btn btn-border">Log In</a>
+                <a href="{{ route('register') }}" class="rts-btn btn-primary">Sign Up</a>
+            </div>
+            <div class="rts-social-style-one pl--20 mt--50">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- mobile menu area end -->
+    </div>
 
     <!-- rts backto top start -->
     <div class="progress-wrap">
@@ -156,4 +236,6 @@
             </path>
         </svg>
     </div>
+
+
     <!-- rts backto top end -->

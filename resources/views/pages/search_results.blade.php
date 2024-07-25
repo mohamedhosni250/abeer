@@ -13,12 +13,13 @@
         </div>
         @forelse ($programs as $university => $universityPrograms)
             <div style="margin-top: 50px" class="mb-5">
-                <div class=" d-flex align-items-center mb-3">
-                    <div style="position: unset ; margin:10px ; width:120px " class="avatar-wrapper"><img
-                            src="{{ $universityPrograms->first()->university->logo_url }}" alt="{{ $university }}"
-                            class="mr-3" style=""></div>
-
-                    <h3>{{ $university }}</h3>
+                <div class=" d-flex align-items-center mb-3"
+                    style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 15px; border-radius: 8px;">
+                    <div style="position: unset; margin:10px; width:120px;" class="avatar-wrapper">
+                        <img src="http://abeer.test/storage/universities_logos/01J2VNXV103X8P882PFGWPRFT3.png"
+                            alt="Asia Pacific University (APU) tt" class="mr-3" style="">
+                    </div>
+                    <h3 class="animated fadeIn">Asia Pacific University (APU) tt</h3>
                 </div>
                 <div style="margin-top: 50px" class="row">
                     @foreach ($universityPrograms as $program)
@@ -27,7 +28,7 @@
                                 <h3 class="program-title">{{ $program->name }}</h3>
                                 <div class="info-container">
                                     <div>
-                                        <span>{{ $program->fee_per_year }}$</span>
+                                        <span class="program-price">{{ $program->fee_per_year }}$</span>
                                         <small>Per Year</small>
                                     </div>
                                     <div>

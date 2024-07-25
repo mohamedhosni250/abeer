@@ -35,8 +35,7 @@ class CourseResource extends Resource
                     ->required(),
                 Textarea::make('description'),
                 FileUpload::make('image')
-                    ->directory('uploads/courses')
-                    ->image(),
+                    ->directory('uploads/courses'),
                 Forms\Components\Select::make('course_category_id')
                     ->relationship('courseCategory', 'name')
                     ->required(),

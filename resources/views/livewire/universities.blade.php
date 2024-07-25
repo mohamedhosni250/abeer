@@ -27,7 +27,7 @@
                                     <span>{{ $university->students_count }} Students</span>
                                 </div>
                             </div>
-                            <p style="font-size: 18px;">
+                            <p style="font-size: 18px; margin-bottom:0px ; font-weight:bold">
                                 Start From <span
                                     style="color: #00B6ED; font-weight: bold;">${{ $university->starting_fee }}</span>
                                 per year
